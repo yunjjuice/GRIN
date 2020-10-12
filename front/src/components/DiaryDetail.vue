@@ -44,7 +44,7 @@
             .551.449 1 1 1s1-.449 1-1v-8.866c.68-.226 1.27-.242 2 .023z"
           />
         </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24" height="24"
           viewBox="0 0 511.878 511.878" style="enable-background:new 0 0 511.878 511.878;" xml:space="preserve" class="weather__icon-thunder">
           <g>
             <g>

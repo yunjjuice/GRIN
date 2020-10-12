@@ -191,9 +191,9 @@ export default {
       const el = document.querySelector('#capture');
       const output = await this.$html2canvas(el, {
         type: 'dataURL',
-        // useCORS: true,
-        imageTimeout: 5000,
-        logging: true,
+        useCORS: true,
+        imageTimeout: 10000,
+        // logging: true,
         onclone: async (document) => {
           await computedStyleToInlineStyle(await document.querySelector("#capture"), {
             recursive: true,

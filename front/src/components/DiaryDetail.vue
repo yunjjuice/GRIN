@@ -118,7 +118,7 @@
 </template>
 
 <script>
-import html2canvas from 'html2canvas';
+// import html2canvas from 'html2canvas';
 
 const computedStyleToInlineStyle = require("computed-style-to-inline-style");
 
@@ -190,18 +190,8 @@ export default {
     async saveFile() {
       // const el = this.$refs.capture;
       const el = document.querySelector('#capture');
-      // const output = await this.$html2canvas(el, {
-      //   type: 'dataURL',
-      //   useCORS: true,
-      //   logging: true,
-      //   imageTimeout: 20000,
-      //   onclone: async (document) => {
-      //     await computedStyleToInlineStyle(document.querySelector("#capture"), {
-      //       recursive: true,
-      //     });
-      //   },
-      // });
-      const output = await html2canvas(el, {
+      // vue-html2canvas 사용
+      const output = await this.$html2canvas(el, {
         type: 'dataURL',
         useCORS: true,
         logging: true,
@@ -211,7 +201,20 @@ export default {
             recursive: true,
           });
         },
-      }).then((canvas) => canvas.toDataURL());
+      });
+
+      // html2canvas 사용
+      // const output = await html2canvas(el, {
+      //   type: 'dataURL',
+      //   useCORS: true,
+      //   logging: true,
+      //   imageTimeout: 20000,
+      //   onclone: async (document) => {
+      //     await computedStyleToInlineStyle(document.querySelector("#capture"), {
+      //       recursive: true,
+      //     });
+      //   },
+      // }).then((canvas) => canvas.toDataURL());
       // window.open(output);
       await this.saveAs(output, 'capture.png');
     },

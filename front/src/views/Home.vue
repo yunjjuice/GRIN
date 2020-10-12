@@ -1,5 +1,8 @@
 <template>
   <div @click="closeBook" ref="home" class="home">
+    <div class="audio">
+      <audio autoplay controls loop> <source src="강아지같아.mp3" type="audio/mp3"> </audio>
+    </div>
     <div class="container">
       <div class="component">
         <figure @click="openBook" ref="book" class="book first-page">
@@ -190,4 +193,10 @@ export default {
   min-width: 100vw;
   min-height: 100vh;
 }
+
+ .audio{
+      position: absolute;
+      top: 5%;
+      left: 80%;
+    }
 </style>

@@ -201,7 +201,7 @@ export default {
         },
       });
       // window.open(output);
-      setTimeout(await this.saveAs(output, 'capture.png'), 10000);
+      await this.saveAs(output, 'capture.png');
     },
     saveAs(uri, filename) {
       const link = document.createElement('a');

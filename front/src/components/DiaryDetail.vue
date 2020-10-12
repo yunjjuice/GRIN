@@ -191,9 +191,9 @@ export default {
       const output = await this.$html2canvas(el, {
         type: 'dataURL',
         useCORS: true,
-        imageTimeout: 0,
+        imageTimeout: 5000,
         onclone: async (document) => {
-          await computedStyleToInlineStyle(document.querySelector("#capture"), {
+          await computedStyleToInlineStyle(await document.querySelector("#capture"), {
             recursive: true,
           });
         },
@@ -201,22 +201,22 @@ export default {
       // window.open(output);
       await this.saveAs(output, 'capture.png');
     },
-    saveAs(uri, filename) {
-      const link = document.createElement('a');
+    async saveAs(uri, filename) {
+      const link = await document.createElement('a');
       if (typeof link.download === 'string') {
         link.href = uri;
         link.download = filename;
 
         // Firefox required the link to be in the body
-        document.body.appendChild(link);
+        await document.body.appendChild(link);
 
         // simulate click
         link.click();
 
         // remove the link when done
-        document.body.removeChild(link);
+        await document.body.removeChild(link);
       } else {
-        window.open(uri);
+        await window.open(uri);
       }
     },
   },

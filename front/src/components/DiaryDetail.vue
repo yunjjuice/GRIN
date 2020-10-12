@@ -1,5 +1,5 @@
 <template>
-  <div class="writing" id="capture" ref="capture" v-show="diary.id > 0">
+  <div class="writing" ref="capture" v-show="diary.id > 0">
     <div class="writing__day-info">
       <div class="day-info__date">{{year}}년 {{month}}월 {{date}}일 ({{day}})</div>
       <div class="day-info__weather2">
@@ -191,9 +191,9 @@ export default {
       const output = await this.$html2canvas(el, {
         type: 'dataURL',
         useCORS: true,
-        imageTimeout: 5000,
+        imageTimeout: 0,
         onclone: async (document) => {
-          await computedStyleToInlineStyle(await document.querySelector("#capture"), {
+          await computedStyleToInlineStyle(document.querySelector(".day-info__weather2"), {
             recursive: true,
           });
         },
@@ -201,22 +201,22 @@ export default {
       // window.open(output);
       await this.saveAs(output, 'capture.png');
     },
-    async saveAs(uri, filename) {
-      const link = await document.createElement('a');
+    saveAs(uri, filename) {
+      const link = document.createElement('a');
       if (typeof link.download === 'string') {
         link.href = uri;
         link.download = filename;
 
         // Firefox required the link to be in the body
-        await document.body.appendChild(link);
+        document.body.appendChild(link);
 
         // simulate click
         link.click();
 
         // remove the link when done
-        await document.body.removeChild(link);
+        document.body.removeChild(link);
       } else {
-        await window.open(uri);
+        window.open(uri);
       }
     },
   },

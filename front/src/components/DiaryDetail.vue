@@ -192,8 +192,8 @@ export default {
         type: 'dataURL',
         useCORS: true,
         imageTimeout: 0,
-        onclone: (document) => {
-          computedStyleToInlineStyle(document.querySelector("#capture"), {
+        onclone: async (document) => {
+          await computedStyleToInlineStyle(document.querySelector("#capture"), {
             recursive: true,
           });
         },

@@ -1,5 +1,5 @@
 <template>
-  <div class="writing" ref="capture" v-show="diary.id > 0">
+  <div class="writing" ref="capture" id="capture" v-show="diary.id > 0">
     <div class="writing__day-info">
       <div class="day-info__date">{{year}}년 {{month}}월 {{date}}일 ({{day}})</div>
       <div class="day-info__weather2">
@@ -187,7 +187,8 @@ export default {
       return `grid__content ${this.fontMapList[this.font]}`;
     },
     async saveFile() {
-      const el = this.$refs.capture;
+      // const el = this.$refs.capture;
+      const el = document.querySelector('#capture');
       const output = await this.$html2canvas(el, {
         type: 'dataURL',
         useCORS: true,

@@ -191,7 +191,7 @@ export default {
       const el = document.querySelector('#capture');
       const output = await this.$html2canvas(el, {
         type: 'dataURL',
-        useCORS: true,
+        // useCORS: true,
         imageTimeout: 5000,
         logging: true,
         onclone: async (document) => {

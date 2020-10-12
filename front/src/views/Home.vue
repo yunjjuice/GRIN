@@ -31,7 +31,6 @@
                 backgroundColor="#7aa3e6"
                 top="170px"
               />
-              <!-- <decoration /> -->
               <decoration-background />
             </li>
             <li>
@@ -40,29 +39,29 @@
               </div>
               <bookmark
                 pageNumber="2"
-                text="일기 쓰기"
+                text="달력"
                 color="white"
                 backgroundColor="#77c9c2"
                 top="120px"
               />
-              <writing />
+              <calendar />
             </li>
             <li>
               <div class="back-space">
-                <word-extract />
+                <diary-detail />
               </div>
               <bookmark
                 pageNumber="1"
-                text="달력 보기"
+                text="일기 쓰기"
                 color="white"
                 backgroundColor="pink"
                 top="70px"
               />
-              <calendar />
+               <writing />
             </li>
             <li v-if="this.$session.has('user_id')">
               <div class="back-space">
-                <diary-detail />
+                <word-extract />
               </div>
               <bookmark
                 pageNumber="0"
@@ -75,7 +74,9 @@
               <profile-edit v-else />
             </li>
             <li v-else>
-              <div class="back-space"></div>
+              <div class="back-space">
+                <word-extract />
+              </div>
               <bookmark
                 pageNumber="0"
                 text="로그인"

@@ -96,7 +96,7 @@
     <div class="writing__drawing">
       <img :src="diary.image">
     </div>
-    <div class="writing__font-selector">
+    <div class="writing__font-selector" data-html2canvas-ignore="true">
       <span>공유</span>
       <div class="btn-group">
         <button @click="saveFile" class="btn">
@@ -188,11 +188,6 @@ export default {
     },
     async saveFile() {
       const el = this.$refs.capture;
-      // const options = {
-      //   type: 'dataURL',
-      //   async: true,
-      //   imageTimeout: 5000,
-      // };
       const output = await this.$html2canvas(el, {
         type: 'dataURL',
         useCORS: true,
@@ -203,7 +198,7 @@ export default {
           });
         },
       });
-      window.open(output);
+      // window.open(output);
       await this.saveAs(output, 'capture.png');
     },
     saveAs(uri, filename) {

@@ -119,7 +119,7 @@
 
 <script>
 // import html2canvas from 'html2canvas';
-// const computedStyleToInlineStyle = require("computed-style-to-inline-style");
+const computedStyleToInlineStyle = require("computed-style-to-inline-style");
 
 export default {
   data() {
@@ -191,12 +191,13 @@ export default {
       const output = await this.$html2canvas(el, {
         type: 'dataURL',
         useCORS: true,
-        imageTimeout: 0,
-        // onclone: async (document) => {
-        //   await computedStyleToInlineStyle(document.querySelector(".day-info__weather2"), {
-        //     recursive: true,
-        //   });
-        // },
+        logging: true,
+        imageTimeout: 20000,
+        onclone: async (document) => {
+          await computedStyleToInlineStyle(document.querySelector(".day-info__weather2"), {
+            recursive: true,
+          });
+        },
       });
       // window.open(output);
       await this.saveAs(output, 'capture.png');

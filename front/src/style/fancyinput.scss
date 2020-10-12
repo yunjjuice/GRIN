@@ -1,0 +1,138 @@
+// @import url(https://fonts.googleapis.com/css?family=Indie+Flower);
+@font-face {
+  font-family: 'Indie Flower';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Indie Flower'), local('IndieFlower'), url(https://fonts.gstatic.com/s/indieflower/v12/m8JVjfNVeKWVnh3QMuKkFcZVaUuH.woff2) format('woff2');
+  unicode-range: U+0040-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+.middle{
+  width: 80%;
+  height: 50%;
+  margin: 25% 10%;
+}
+
+#fancy-inputs{
+  float: left;
+  width: 100%;
+  margin: 0 0 30px 0;
+  label.input{
+    float: left;
+    width: 100%;
+    height: 42px;
+    margin: 50px 0 0 0;
+    position: relative;
+    clear: both;
+    span{
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      position: absolute;
+      left: 0;
+      cursor: text;
+      span{
+        position: absolute;
+        top: 0;
+        z-index: 1;
+        font-family: 'Indie Flower', cursive;
+        font-size: 22px;
+        color: rgb(0, 0, 0);
+        text-indent: 10px;
+        transition: 0.3s;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+      }
+      &:before{
+        content: '';
+        width: 0%;
+        height: 3px;
+        background-color: #2C3E50;
+        // background-color: red; // 입력폼이 다 안 써졌을때 이 부분을 red로 변경
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 99;
+        transition: 0.3s;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+      }
+      &:after{
+        content: '';
+        width: 0%;
+        height: 3px;
+        background-color: #2C3E50;
+        // background-color: red;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 99;
+        transition: 0.3s;
+        -webkit-transition: 0.3s;
+        -moz-transition: 0.3s;
+      }
+    }
+  }
+
+  input{
+    float: left;
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    border: 0;
+    border-bottom: 3px solid rgb(255, 255, 255);
+    background-color: transparent;
+    color: rgb(0, 0, 0);
+    font-family: 'Indie Flower', 'KyoboHand', cursive;
+    font-size: 22px;
+    position: relative;
+    z-index: 99;
+    &:focus{
+      outline: 0;
+    }
+    &.white{
+      background-color: #fff;
+    }
+  }
+
+  input:focus + span{
+    span{
+      cursor: initial;
+      position: absolute;
+      top: -35px;
+      color: #2C3E50;
+    }
+    &:before{
+      width: 50%;
+    }
+    &:after{
+      width: 50%;
+    }
+  }
+
+  span.fixed{
+    span{
+      top: -35px;
+    }
+  }
+}
+
+.btn{
+  float: left;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  margin: 30px 0;
+  background-color: #2C3E50;
+  color: #fff;
+  font-family: 'Indie Flower', cursive;
+  font-size: 22px;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  &:hover{
+    background-color: #374b60;
+  }
+}

@@ -1,0 +1,32 @@
+.bookmark {
+    position: absolute;
+    left: 85%;
+    width: 180px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.055);
+    font-family: "NanumGomSinCe";
+}
+
+.bookmark--start {
+    width: 100px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.411);
+}
+
+.bookmark--end {
+    background-color: rgba(0, 0, 0, 0);
+    width: 80px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: rgba(0, 0, 0, 0);
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0px 10px;
+    box-sizing: border-box;
+    justify-self: flex-end;
+    cursor: pointer;
+}

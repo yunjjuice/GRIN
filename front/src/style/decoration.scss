@@ -1,0 +1,46 @@
+.decoration {
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    font-family: "NanumSeGyeJeogInHanGeur";
+    font-size: 2rem;
+}
+
+.decoration__book-cover,
+.decoration__background {
+    width: 100%;
+    height: 50%;
+
+    .grid {
+        width: 100%;
+        height: 80%;
+        display: grid;
+        gap: 20px 10px;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        margin-top: 20px;
+    }
+
+    .cell {
+        box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;
+        display:flex;
+        justify-content: center;
+        align-items: stretch;
+        &:hover {
+            cursor: pointer;
+            transform: scale(2) translateZ(100px);
+            z-index: 100;
+        }
+        img{
+            width: 83px;
+            height: 100%;
+        }
+    }
+
+    img {
+        width: 83px;
+        height: 121px;
+    }
+}
+

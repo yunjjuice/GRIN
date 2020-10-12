@@ -1,0 +1,140 @@
+.writing {
+    width: 92%;
+    height: 95%;
+    margin: 4%;
+    display: flex;
+    flex-direction: column;
+    z-index: 11;
+  }
+  
+  .writing__day-info {
+    width: 100%;
+    height: 10%;
+    border: 3px solid rgba(0, 0, 0, 0.3);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.2rem;
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: 600;
+    .day-info__date {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .day-info__weather2 {
+      width: 50%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+  
+      svg {
+        width: 30px;
+        height: 30px;
+        fill: rgba(0, 0, 0, 0.3);
+        transition: 0.2s ease-in-out;
+      }
+      svg.selected{
+        &.weather__icon-sunny {
+          fill: orange;
+        }
+        &.weather__icon-cloudy {
+          fill: rgb(61, 116, 163);
+        }
+        &.weather__icon-rainy {
+          fill: rgb(51, 156, 95);
+        }
+        &.weather__icon-snowy {
+          fill: rgb(172, 218, 236);
+        }
+      }
+      svg:active{
+          opacity: 0.5;
+      }
+    }
+  }
+  
+  .writing__drawing {
+    width: 100%;
+    height: 50%;
+    border: 3px solid rgba(0, 0, 0, 0.3);
+    border-top: none;
+  }
+  
+  .writing__font-selector {
+    width: 100%;
+    height: 5%;
+    border: 3px solid rgba(0, 0, 0, 0.3);
+    border-top: none;
+    display:flex;
+    align-items: center;
+    span{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      padding: 0px 20px;
+      border-right: 3px solid rgba(0,0,0,0.3);
+      font-weight: 100;
+    }
+    .font-selector__font-list{
+      display: flex;
+      align-items: center;
+      button{
+        border: none;
+        background-color:rgba(0,0,0,0);
+        font-size: 1.5rem;
+        outline: none;
+        margin: 5px;
+        color: rgba(0, 0, 0, 0.4);
+        font-weight: bold;
+        transition: 0.2s ease-in-out;
+        &.selected, &:hover{
+          color: black;
+        }
+      }
+    }
+  }
+
+
+  
+  .writing__grid {
+    width: 100%;
+    height: 35%;
+    display: grid;
+    gap: 3px;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 3px solid rgba(0, 0, 0, 0.05);
+    border-top: none;
+    z-index: 15;
+    .cell {
+      background-color: white;
+      z-index: 10;
+    }
+  }
+
+  .grid__content{
+      position: absolute;
+      width: 95%;
+      height: 40%;
+      background-color: rgba(0, 0, 0, 0);
+      font-size: 2.5rem;
+      padding-left: 8px;
+      letter-spacing: 21.1px;
+      line-height: 43px;
+      z-index: 20;
+      word-break: break-all;
+      resize:none;
+      border: none;
+      outline: none;
+      overflow: clip;
+  }
+
+  [contenteditable]{
+      outline: 0px solid transparent;
+  }

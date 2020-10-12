@@ -39,16 +39,16 @@
       }
       svg.selected{
         &.weather__icon-sunny {
-          fill: orange;
+          fill: rgb(255, 71, 26);
         }
         &.weather__icon-cloudy {
-          fill: rgb(61, 116, 163);
-        }
-        &.weather__icon-rainy {
           fill: rgb(51, 156, 95);
         }
-        &.weather__icon-snowy {
-          fill: rgb(172, 218, 236);
+        &.weather__icon-rainy {
+          fill: rgb(0, 64, 255);
+        }
+        &.weather__icon-thunder {
+          fill: rgb(255, 219, 77);
         }
       }
       svg:active{

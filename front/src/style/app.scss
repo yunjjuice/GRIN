@@ -1,0 +1,62 @@
+@import "./style/reset.css";
+
+body{
+  width: 100vw;
+  height: 100vh;
+}
+
+@font-face {
+  font-family: "NanumSeGyeJeogInHanGeur";
+  src: url("../font/NanumSeGyeJeogInHanGeur.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "NanumGomSinCe";
+  src: url("../font/NanumGomSinCe.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "NanumYeBbeunMinGyeongCe";
+  src: url("../font/NanumYeBbeunMinGyeongCe.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "KyoboHand";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/KyoboHand.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font__se-han {
+  font-family: "NanumSeGyeJeogInHanGeur";
+}
+
+.font__gom-sin {
+  font-family: "NanumGomSinCe";
+}
+
+.font__min-gyeong {
+  font-family: "NanumYeBbeunMinGyeongCe";
+  color: rgba(0, 0, 0, 0.6);
+}
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-image: url("/imgs/backgrounds/1.png");
+  background-repeat: repeat;
+}
+
+::selection {
+  background-color: rgba(0, 0, 0, 0.3);
+}

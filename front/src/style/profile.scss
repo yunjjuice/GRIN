@@ -1,0 +1,126 @@
+.fir-circle {
+	width: 100%;
+	border-radius: 100px;
+}
+.group {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+.sketchy {
+	padding: 1rem 2rem;
+	display: inline-block;
+	border: 3px solid #333;
+  font-family: 'KyoboHand';
+  font-size: 1.3rem;
+	border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+	text-transform: uppercase;
+	letter-spacing: 0.3ch;
+	background: #fff;
+	position: relative;
+	width: 80%;
+	&::before {
+		// content: '';
+		border: 2px solid #353535;
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
+		border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
+	}
+}
+button {
+	font-family: GmarketSansMedium;
+	--button: hsl(0, 0%, 12%);
+	--button-hover: hsl(0, 0%, 20%);
+	--button-active: hsl(0, 0%, 30%);
+	--button-visited: hsl(0, 0%, 20%);
+	--button-colour: #ffffff;
+	--button-border: #1e1e1e;
+	padding: .8rem 1rem;
+	color: var(--button-colour);
+	font-weight: 500;
+	transition: all 0.3s ease-in-out;
+	background: var(--button);
+	border: solid 1px var(--button-border);
+	box-shadow: inset 0 0 0 2px #ffffff;
+	margin-left: 0.5em;
+	margin-right: 0.5em;
+	&:hover {
+		background: var(--button-hover);
+		box-shadow: inset 0 0 0 4px #ffffff;
+	}
+	&:active {
+		background: var(--button-active);
+	}
+	&:visited {
+		background: var(--button-visited);
+	}
+}
+.button {
+	font-family: GmarketSansMedium;
+	--button: hsl(0, 0%, 12%);
+	--button-hover: hsl(0, 0%, 20%);
+	--button-active: hs	l(0, 0%, 30%);
+	--button-visited: hsl(0, 0%, 20%);
+	--button-colour: #ffffff;
+	--button-border: #1e1e1e;
+}
+.button--tertiary {
+	--button:  #179a2d;
+	--button-hover: hsl(120, 86%, 23%);
+	--button-active: hsl(143, 91%, 32%);
+	--button-visited: hsl(0, 100%, 94%);
+	--button-colour: #ffffff;
+	--button-border: #37d129;
+}
+
+.file-select {
+  background: #363D4E;
+  border: none;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  color: #FFFFFF;
+  cursor: pointer;
+  outline: none;
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  right: 130px;
+	top: 200px;
+	text-align: center;
+	font-size: 1.7rem;
+  -webkit-transition: -webkit-transform 600ms;
+  -moz-transition: -moz-transform 600ms;
+  -ms-transition: -ms-transform 600ms;
+  -o-transition: -o-transform 600ms;
+	transition: transform 600ms;
+	.icon {
+    padding: 20%;
+  }
+}
+
+input[type="file"] {
+  /* 파일 필드 숨기기 */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip:rect(0,0,0,0);
+  border: 0;
+}
+
+.input-edit {
+  font-family: 'KyoboHand';
+  font-size: 1.3rem;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

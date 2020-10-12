@@ -1,0 +1,11 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+.idea/*
+.vscode/*
+.ipynb_checkpoints/*
+util/.ipynb_checkpoints/
+dataset/*
+dataset/
+Data/*
+Data/
+

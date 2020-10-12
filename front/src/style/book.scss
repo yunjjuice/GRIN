@@ -1,0 +1,520 @@
+@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
+
+/*
+	A. Mini Reset 
+*/
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+::before,
+::after {
+  content: '';
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* basic grid, only for this demo */
+
+
+/* ///////////////////////////////////////////////////
+
+PAPERBACK
+Table of Contents
+
+1. container
+2. background & color
+3. opening cover, back cover and pages
+4. position, transform y transition
+5. events
+6. Bonus
+	- Ribbon
+	- Figcaption
+7. mini-reset
+
+/////////////////////////////////////////////////////*/
+
+/*
+	1. container
+*/
+
+.book {
+  position: relative;
+  width: 512px;
+  height: 704px;
+  margin-left: 300px;
+  -webkit-perspective: 2000px;
+  -moz-perspective: 2000px;
+  perspective: 2000px;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/*
+	2. background & color
+*/
+
+/* HARDCOVER FRONT */
+
+.paperback_front {
+  background-color: #ecd25100;
+}
+
+.paperback_front::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.paperback_back {
+  background-color: rgb(255, 255, 255);
+}
+
+/* page */
+
+.ruled_paper>li {
+  background-color: #fff;
+}
+
+/*
+	3. opening cover, back cover and pages
+*/
+
+.paperback_front {
+  -webkit-transform: rotateY(-5deg) translateZ(0px);
+  -moz-transform: rotateY(-5deg) translateZ(0px);
+  transform: rotateY(-5deg) translateZ(0px);
+  z-index: 100;
+}
+
+.paperback_back {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+
+.ruled_paper li:nth-child(1) {
+  -webkit-transform: rotateY(-1deg);
+  -moz-transform: rotateY(-1deg);
+  transform: rotateY(-1deg);
+}
+
+.ruled_paper li:nth-child(2) {
+  -webkit-transform: rotateY(-1deg);
+  -moz-transform: rotateY(-1deg);
+  transform: rotateY(-1deg);
+}
+
+.ruled_paper li:nth-child(3) {
+  -webkit-transform: rotateY(-2deg);
+  -moz-transform: rotateY(-2deg);
+  transform: rotateY(-2deg);
+}
+
+.ruled_paper li:nth-child(4) {
+  -webkit-transform: rotateY(-3deg);
+  -moz-transform: rotateY(-3deg);
+  transform: rotateY(-3deg);
+}
+
+.ruled_paper li:nth-child(5) {
+  -webkit-transform: rotateY(-4deg);
+  -moz-transform: rotateY(-4deg);
+  transform: rotateY(-4deg);
+}
+
+.ruled_paper li:nth-child(6) {
+  -webkit-transform: rotateY(-5deg);
+  -moz-transform: rotateY(-5deg);
+  transform: rotateY(-5deg);
+}
+
+/*
+	4. position, transform y transition
+*/
+
+.paperback_front,
+.paperback_back,
+.paperback_front li,
+.paperback_back li {
+  border-radius: 2px 8px 8px 2px;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.paperback_front,
+.paperback_back {
+  -webkit-transform-origin: 0% 100%;
+  -moz-transform-origin: 0% 100%;
+  transform-origin: 0% 100%;
+}
+
+.paperback_front {
+  -webkit-transition: all 0.5s ease, z-index 0.6s;
+  -moz-transition: all 0.5s ease, z-index 0.6s;
+  transition: all 0.5s ease, z-index 0.6s;
+}
+
+.paperback_front li,
+.paperback_back li {
+  border-radius: 2px 8px 8px 2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 0.5px 1px 3px rgba(0, 0, 0, 0.05), 0px -1px 10px rgba(0, 0, 0, 0.05);
+
+  img {
+    border-radius: 2px 8px 8px 2px;
+  }
+
+  .back-space {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: white;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    border-radius: 8px 2px 2px 8px;
+  }
+}
+
+/* Ruled paper */
+
+.ruled_paper,
+.ruled_paper>li {
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.ruled_paper {
+  width: 95%;
+  height: 95%;
+  top: 2.5%;
+  left: 0%;
+  z-index: 10;
+}
+
+.ruled_paper>li {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 0px -2px 5px rgba(0, 0, 0, 0.2);
+  transform-style: preserve-3d;
+
+  .back-space {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 0 calc(var(--baseline) * 1.8);
+    transform: rotateY(180deg) translateZ(5px);
+    background: white;
+  }
+}
+
+.ruled_paper>li {
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  transform-origin: left center;
+  -webkit-transition-property: transform;
+  -moz-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease;
+  -moz-transition-timing-function: ease;
+  transition-timing-function: ease;
+}
+
+.ruled_paper li:nth-child(1) {
+  -webkit-transition-duration: 0.6s;
+  -moz-transition-duration: 0.6s;
+  transition-duration: 0.6s;
+}
+
+.ruled_paper li:nth-child(2) {
+  -webkit-transition-duration: 0.6s;
+  -moz-transition-duration: 0.6s;
+  transition-duration: 0.6s;
+}
+
+.ruled_paper li:nth-child(3) {
+  -webkit-transition-duration: 0.4s;
+  -moz-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.ruled_paper li:nth-child(4) {
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
+.ruled_paper li:nth-child(5) {
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
+.ruled_paper li:nth-child(6) {
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+
+/*
+	5. events
+*/
+
+$open-deg: -175deg;
+$total-page: 6;
+$cur-page: 0;
+
+@mixin pageAnimation($cur-page) {
+
+  // 넘어가는 페이지
+  &:not(.first-page) {
+    @for $i from $total-page+-1 through $cur-page {
+      $curDuration: 2.0s - $i*0.2s;
+
+      .ruled_paper li:nth-child(#{$i}) {
+        transform: rotateY($open_deg + 5deg - $i);
+        transition-duration: $curDuration;
+      }
+    }
+  }
+
+  $cur-page: $cur-page - 1;
+
+  // 남아있는 페이지
+  @for $i from 1 through $cur-page {
+    $curDuration: $i*0.2s;
+
+    .ruled_paper li:nth-child(#{$i}) {
+      transform: rotateY(1deg - $i*1deg);
+      transition-duration: $curDuration;
+    }
+  }
+}
+
+.book--opened {
+  cursor: default;
+
+  // 북커버 앞 부분
+  .paperback_front {
+    transform: rotateY($open-deg) translateZ(0px);
+    z-index: 0;
+  }
+
+  // 커버 앞에 계속 붙어있는 페이지
+  .ruled_paper li:last-child {
+    transform: rotateY($open-deg+0.5deg) translateZ(0px);
+  }
+
+  &.first-page {
+    @include pageAnimation($total-page - 0);
+  }
+
+  &.second-page {
+    @include pageAnimation($total-page - 1);
+  }
+
+  &.third-page {
+    @include pageAnimation($total-page - 2);
+  }
+
+  &.fourth-page {
+    @include pageAnimation($total-page - 3);
+  }
+}
+
+.book:hover:not(.book--opened) {
+  transform: translateY(-10px);
+}
+
+/* Cover colors */
+.green {
+  background: #2ecc71;
+}
+
+.red {
+  background: #cb0000;
+}
+
+/*
+	6. Bonus
+*/
+
+/* Basic ribbon */
+
+.ribbon {
+  color: #fff;
+  display: block;
+  font-size: 0.7em;
+  position: absolute;
+  top: 11px;
+  right: 1px;
+  width: 40px;
+  height: 20px;
+  line-height: 20px;
+  letter-spacing: 0.15em;
+  text-align: center;
+  -webkit-transform: rotateZ(45deg) translateZ(1px);
+  -moz-transform: rotateZ(45deg) translateZ(1px);
+  transform: rotateZ(45deg) translateZ(1px);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  z-index: 10;
+
+  &.ribbon--color1 {
+    background: #eeadda;
+  }
+
+  &.ribbon--color2 {
+    background: #EEDFE0;
+  }
+
+  &.ribbon--color3 {
+    background: #fff5fc;
+  }
+
+  &.ribbon--color4 {
+    background: white;
+  }
+
+  &.ribbon--color5 {
+    background: white;
+  }
+
+  &.ribbon--color6 {
+    background: #F6A81F;
+  }
+
+  &.ribbon--color7 {
+    background: #FEC15B;
+  }
+
+  &.ribbon--color8 {
+    background: #F3B245;
+  }
+
+  &.ribbon--color9 {
+    background: #E5E6D7;
+  }
+
+  &.ribbon--color10 {
+    background: #FDD676;
+  }
+}
+
+.ribbon::before,
+.ribbon::after {
+  position: absolute;
+  top: -20px;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+}
+
+.ribbon::before {
+  left: -20px;
+  border-left: 20px solid transparent;
+}
+
+.ribbon::after {
+  right: -20px;
+  border-right: 20px solid transparent;
+}
+
+.ribbon--color1::before,
+.ribbon--color1::after{
+  border-bottom: 20px solid #eeadda;
+}
+
+.ribbon--color2::before,
+.ribbon--color2::after{
+  border-bottom: 20px solid #EEDFE0;
+}
+
+.ribbon--color3::before,
+.ribbon--color3::after{
+  border-bottom: 20px solid #fff5fc;
+}
+
+.ribbon--color4::before,
+.ribbon--color4::after{
+  border-bottom: 20px solid white;
+}
+
+.ribbon--color5::before,
+.ribbon--color5::after{
+  border-bottom: 20px solid white;
+}
+
+.ribbon--color6::before,
+.ribbon--color6::after{
+  border-bottom: 20px solid #F6A81F;
+}
+
+.ribbon--color7::before,
+.ribbon--color7::after{
+  border-bottom: 20px solid #FEC15B;
+}
+
+.ribbon--color8::before,
+.ribbon--color8::after{
+  border-bottom: 20px solid #F3B245;
+}
+
+.ribbon--color9::before,
+.ribbon--color9::after{
+  border-bottom: 20px solid #E5E6D7;
+}
+
+.ribbon--color10::before,
+.ribbon--color10::after{
+  border-bottom: 20px solid #FDD676;
+}
+
+/* Media Queries */
+@media screen and (max-width: 40em) {
+  .align>li {
+    width: 100%;
+    min-height: 440px;
+    height: auto;
+    padding: 0;
+    margin: 0 0 30px 0;
+  }
+
+  .book {
+    margin: 0 auto;
+  }
+}

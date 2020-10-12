@@ -156,8 +156,8 @@ export default {
       this.date = date.getDate();
       this.day = ["일", "월", "화", "수", "목", "금", "토"][date.getDay()];
       this.font = val.font;
-      console.log('font', this.font);
-      console.log('emotion', val.emotion);
+      // console.log('font', this.font);
+      // console.log('emotion', val.emotion);
       this.selectWeather(this.weatherIconList[val.emotion]);
     },
   },
@@ -170,14 +170,14 @@ export default {
   mounted() {
     const weatherInfo = document.querySelector(".day-info__weather2");
     this.weatherIconList = weatherInfo.querySelectorAll("svg");
-    console.log('info2', weatherInfo);
+    // console.log('info2', weatherInfo);
 
     const fontSelector = document.querySelector(".font-selector__font-list");
     this.fontBtnList = fontSelector.querySelectorAll("button");
   },
   methods: {
     selectWeather(e) {
-      console.log('change', e);
+      // console.log('change', e);
       this.weatherIconList.forEach((elem) => {
         elem.classList.remove("selected");
       });
@@ -195,13 +195,13 @@ export default {
         logging: true,
         imageTimeout: 20000,
         onclone: async (document) => {
-          await computedStyleToInlineStyle(document.querySelector(".day-info__weather2"), {
+          await computedStyleToInlineStyle(document.querySelector("#capture"), {
             recursive: true,
           });
         },
       });
       // window.open(output);
-      await this.saveAs(output, 'capture.png');
+      setTimeout(await this.saveAs(output, 'capture.png'), 10000);
     },
     saveAs(uri, filename) {
       const link = document.createElement('a');

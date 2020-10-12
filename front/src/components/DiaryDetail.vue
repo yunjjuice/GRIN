@@ -187,12 +187,6 @@ export default {
       return `grid__content ${this.fontMapList[this.font]}`;
     },
     async saveFile() {
-      // console.log(this.$refs.capture);
-      // await html2canvas(this.$refs.capture).then((canvas) => {
-      //   document.body.appendChild(canvas);
-      //   this.saveAs(canvas.toDataURL(), 'capture.png');
-      //   // window.open(canvas);
-      // });
       const el = this.$refs.capture;
       // const options = {
       //   type: 'dataURL',

@@ -9,7 +9,10 @@
             <li>
               <div class="back-space"></div>
               <span class="ribbon ribbon--color1"></span>
-              <img :src="`/imgs/bookcovers/${theme}.gif`" width="100%" height="100%" />
+              <div class="front-wrap">
+                <img :src="`/imgs/bookcovers/${theme}.gif`" width="100%" height="100%" />
+                <div class="front-title"><img src="front-title.png" /></div>
+              </div>
             </li>
             <li></li>
           </ul>

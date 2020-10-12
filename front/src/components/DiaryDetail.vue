@@ -192,10 +192,10 @@ export default {
       const output = await this.$html2canvas(el, {
         type: 'dataURL',
         useCORS: true,
-        imageTimeout: 10000,
-        // logging: true,
+        logging: true,
+        imageTimeout: 20000,
         onclone: async (document) => {
-          await computedStyleToInlineStyle(await document.querySelector("#capture"), {
+          await computedStyleToInlineStyle(document.querySelector(".day-info__weather2"), {
             recursive: true,
           });
         },

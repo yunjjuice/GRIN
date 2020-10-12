@@ -1,5 +1,5 @@
 <template>
-  <div class="writing" ref="capture" v-show="diary.id > 0">
+  <div class="writing" id="capture" ref="capture" v-show="diary.id > 0">
     <div class="writing__day-info">
       <div class="day-info__date">{{year}}년 {{month}}월 {{date}}일 ({{day}})</div>
       <div class="day-info__weather2">
@@ -108,6 +108,7 @@
 
 <script>
 // import html2canvas from 'html2canvas';
+const computedStyleToInlineStyle = require("computed-style-to-inline-style");
 
 export default {
   data() {
@@ -182,10 +183,21 @@ export default {
       //   // window.open(canvas);
       // });
       const el = this.$refs.capture;
-      const options = {
+      // const options = {
+      //   type: 'dataURL',
+      //   async: true,
+      //   imageTimeout: 5000,
+      // };
+      const output = await this.$html2canvas(el, {
         type: 'dataURL',
-      };
-      const output = await this.$html2canvas(el, options);
+        useCORS: true,
+        imageTimeout: 0,
+        onclone: (document) => {
+          computedStyleToInlineStyle(document.querySelector("#capture"), {
+            recursive: true,
+          });
+        },
+      });
       window.open(output);
       await this.saveAs(output, 'capture.png');
     },

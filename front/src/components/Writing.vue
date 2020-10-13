@@ -95,9 +95,6 @@
         </svg>
       </div>
     </div>
-    <div class="box">
-    <img :src="imgsrc" />
-    </div>
     <div class="writing__drawing">
       <drawing-canvas ref="canvas" v-if="refresh" />
     </div>
@@ -577,39 +574,5 @@ body,html {
 
 .col-sm-2 {
   height: 100px;
-}
-.box {
-    display: flex;
-    /* width: 100px;
-    height: 100px; */
-    background-color: red;
-    font-size: 20px;
-    left: center;
-    top: center;
-    transform: (10px, 10px);
-    position:absolute;
-    -webkit-transition-property: width height background-font-size left top color;
-    transition-duration:2s;
-    transition-delay:0.5s;
-    transition-timing-function: linear;
-}
-.box1{
-    display: flex;
-    /* width: 50px;
-    height: 50px; */
-    background-color: blue;
-    /* color: yellow; */
-    font-size: 18px;
-    left: 192px;
-    top:0px;
-    position:absolute;
-     -webkit-transition-property: width height background-color font-size left top color;
-    -webkit-transition-duration:2s;
-    -webkit-transition-delay:0.5s;
-    -webkit-transition-timing-function: linear;
-    transition-property: width height background-color font-size left top color;
-    transition-duration:2s;
-    transition-delay:0.5s;
-    transition-timing-function: linear;
 }
 </style>

@@ -216,7 +216,7 @@ export default {
       //   },
       // }).then((canvas) => canvas.toDataURL());
       // window.open(output);
-      await this.saveAs(output, 'capture.png');
+      await this.saveAs(output, `GRIN-${this.year}-${this.month}-${this.date}.png`);
     },
     saveAs(uri, filename) {
       const link = document.createElement('a');

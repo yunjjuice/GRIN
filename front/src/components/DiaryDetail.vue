@@ -119,6 +119,7 @@
 
 <script>
 // import html2canvas from 'html2canvas';
+
 const computedStyleToInlineStyle = require("computed-style-to-inline-style");
 
 export default {
@@ -156,8 +157,8 @@ export default {
       this.date = date.getDate();
       this.day = ["일", "월", "화", "수", "목", "금", "토"][date.getDay()];
       this.font = val.font;
-      console.log('font', this.font);
-      console.log('emotion', val.emotion);
+      // console.log('font', this.font);
+      // console.log('emotion', val.emotion);
       this.selectWeather(this.weatherIconList[val.emotion]);
     },
   },
@@ -170,14 +171,14 @@ export default {
   mounted() {
     const weatherInfo = document.querySelector(".day-info__weather2");
     this.weatherIconList = weatherInfo.querySelectorAll("svg");
-    console.log('info2', weatherInfo);
+    // console.log('info2', weatherInfo);
 
     const fontSelector = document.querySelector(".font-selector__font-list");
     this.fontBtnList = fontSelector.querySelectorAll("button");
   },
   methods: {
     selectWeather(e) {
-      console.log('change', e);
+      // console.log('change', e);
       this.weatherIconList.forEach((elem) => {
         elem.classList.remove("selected");
       });
@@ -189,20 +190,34 @@ export default {
     async saveFile() {
       // const el = this.$refs.capture;
       const el = document.querySelector('#capture');
+      // vue-html2canvas 사용
       const output = await this.$html2canvas(el, {
         type: 'dataURL',
         useCORS: true,
         logging: true,
         imageTimeout: 20000,
         onclone: async (document) => {
-          await computedStyleToInlineStyle(document.querySelector(".day-info__weather2"), {
+          await computedStyleToInlineStyle(document.querySelector("#capture"), {
             recursive: true,
           });
           await setTimeout(async () => { }, 10000);
         },
       });
+
+      // html2canvas 사용
+      // const output = await html2canvas(el, {
+      //   type: 'dataURL',
+      //   useCORS: true,
+      //   logging: true,
+      //   imageTimeout: 20000,
+      //   onclone: async (document) => {
+      //     await computedStyleToInlineStyle(document.querySelector("#capture"), {
+      //       recursive: true,
+      //     });
+      //   },
+      // }).then((canvas) => canvas.toDataURL());
       // window.open(output);
-      await this.saveAs(output, 'capture.png');
+      await this.saveAs(output, `GRIN-${this.year}-${this.month}-${this.date}.png`);
     },
     saveAs(uri, filename) {
       const link = document.createElement('a');

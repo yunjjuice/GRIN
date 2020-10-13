@@ -175,7 +175,14 @@
           </svg>
           <span>일기 저장하기</span>
         </div>
-        <button id="btn-drawing" @click="isGrimMode = !isGrimMode" > 그리기 모드 </button>
+        <div class='toggle btn-drawing' id='switch' @click="drawingToggle">
+          <div class='toggle-text-off'>OFF</div>
+          <div class='glow-comp'></div>
+          <div class='toggle-button'></div>
+          <div class='toggle-text-on'>ON</div>
+          <span>그리기 모드</span>
+        </div>
+        <!-- <button class="btn-drawing" @click="isGrimMode = !isGrimMode" > 그리기 모드 </button> -->
       </div>
     </div>
     <div class="writing__grid">
@@ -222,6 +229,7 @@ export default {
       action: [],
       sendBtn: '',
       downloadBtn: '',
+      drawingToggleBtn: '',
       msg: '10글자 이상 작성해주세요',
     };
   },
@@ -280,6 +288,7 @@ export default {
 
     this.downloadBtn = document.querySelector('#btn-download');
     this.sendBtn = document.querySelector('#btn-send');
+    this.drawingToggleBtn = document.querySelector('.toggle');
   },
   methods: {
     init() {
@@ -354,6 +363,14 @@ export default {
         this.downloadBtn.classList.remove('downloaded');
       }, 3000);
     },
+    drawingToggle() {
+      this.isGrimMode = !this.isGrimMode;
+      if (this.isGrimMode) {
+        this.drawingToggleBtn.classList.add('toggle-on');
+      } else {
+        this.drawingToggleBtn.classList.remove('toggle-on');
+      }
+    },
   },
 };
 </script>
@@ -365,37 +382,5 @@ export default {
 .btn-group {
   position: absolute;
   right: 30px;
-}
-
-.btn {
-  border: none;
-  background-color:rgba(0,0,0,0);
-  font-size: 1.5rem;
-  outline: none;
-  margin: 5px;
-  // color: rgba(0, 0, 0, 0.4);
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.sunny {
-  position: absolute;
-  width: 60px;
-  right: 136px;
-}
-.cloudy {
-  position: absolute;
-  width: 60px;
-  right: 90px;
-}
-.rainy {
-  position: absolute;
-  width: 60px;
-  right: 52px;
-}
-.snowy {
-  position: absolute;
-  width: 60px;
-  right: 10px;
 }
 </style>

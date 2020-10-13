@@ -18,7 +18,7 @@ export default {
   data() {
     return {
       backgroundBasePath: "/imgs/backgrounds/",
-      backgroundNum: 7,
+      backgroundNum: 20,
     };
   },
   methods: {

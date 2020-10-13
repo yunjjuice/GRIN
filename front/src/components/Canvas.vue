@@ -1,6 +1,8 @@
 <template>
-  <canvas id = "background" ref="canvas" width="443" height="307"></canvas>
-  <canvas id = "newcan" ref="canvas" width="443" height="307"></canvas>
+<div id="stage">
+ <canvas id="newlayer" ref="canvas" width="443" height="307"></canvas>
+ <canvas id="background-layer" ref="newcanvas" width="443" height="307"></canvas>
+</div>
 </template>
 
 <script>
@@ -262,6 +264,7 @@ export default {
       }
     },
     render() {
+      this.ctx = this.canvas.getContext("2d");
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
       for (let i = 0; i < this.imageInfos.length; i += 1) {
         const info = this.imageInfos[i];
@@ -413,14 +416,13 @@ export default {
       }
     },
     beginDrawing(e) {
-      this.canvasD = document.createElement('canvas');
-      this.canvasD.Zindex = 10;
+      this.canvasD = document.getElementById("background-layer");
       this.ctx = this.canvasD.getContext("2d");
       this.x = e.offsetX;
       this.y = e.offsetY;
       this.isDrawing = true;
     },
-    stopDrawing(e) {
+    async stopDrawing(e) {
       const img = new Image();
       // const newImage = new Image();
       if (this.isDrawing) {
@@ -429,7 +431,7 @@ export default {
         this.y = 0;
         this.isDrawing = false;
         img.src = this.canvasD.toDataURL();
-        img.onload = () => {
+        img.onload = async () => {
           const oCanvas = document.createElement('canvas');
           oCanvas.width = this.drawingImage.dx - this.drawingImage.sx;
           oCanvas.height = this.drawingImage.dy - this.drawingImage.sy;
@@ -452,22 +454,24 @@ export default {
           this.drawingImage.sx = Number.MAX_VALUE;
           this.drawingImage.sy = Number.MAX_VALUE;
           this.drawingImage.dy = 0;
-          this.drawingImage.dy = 0;
+          this.drawingImage.dx = 0;
+          await this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+          this.render();
         };
-        this.canvasD = undefined;
-        console.log("ASD ", this.canvasD);
       }
-      console.log(this.imgs);
-      this.ctx = this.canvas.getContext("2d");
-      img.src = this.canvas.toDataURL();
     },
   },
-  // mounted() {
-  //   this.imageLoad();
-  // },
 };
 </script>
 
 <style lang="scss" scoped>
+#stage {
+    width: 443px;
+    height: 307px;
+    position: relative;
+  }
 
+  canvas { position: absolute; }
+  #newlayer { z-index: 2; }
+  #background-layer { z-index: 1; }
 </style>

@@ -1,0 +1,213 @@
+#btn-download {
+  cursor: pointer;
+  display: block;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  -webkit-tap-highlight-color: transparent;
+  position: absolute;
+  top: calc(50% - 24px);
+  left: calc(50% - 35px);
+  &:hover {
+    background: rgba(34, 50, 84, 0.05);
+  }
+  svg {
+    margin: 16px 0 0 16px;
+    fill: none;
+    transform: translate3d(0, 0, 0);
+    polyline {
+      // stroke: #0077FF;
+      stroke: #000000;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: all .3s ease;
+      transition-delay: .3s;
+    }
+    path {
+      // stroke: #0077FF;
+      stroke: #000000;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: all .3s ease;
+      transition-delay: .3s;
+    }
+    path#check {
+      stroke-dasharray: 38;
+      stroke-dashoffset: 114;
+      transition: all .4s ease;
+    }
+  }
+}
+#btn-download.downloaded {
+  svg {
+    .svg-out {
+      opacity: 0;
+      animation: drop .3s linear;
+      transition-delay: .4s;
+    }
+    path#check {
+      stroke: #20CCA5;
+      stroke-dashoffset: 174;
+      transition-delay: .4s;
+    }
+  }
+}
+
+#btn-download:hover span {
+  opacity: 1;
+  color: white;
+	transform: translate(-50%, 0);
+}
+
+#btn-download span {
+	position: absolute;
+	left: 50%;
+	bottom: 100%;
+	opacity: 0;
+	margin-bottom: 1em;
+	// padding: 1em;
+	background-color: #000;
+	font-size: 0.7em;
+	line-height: 1.6;
+	text-align: left;
+	white-space: nowrap;
+	transform: translate(-50%, 1em);
+	transition: all 0.15s ease-in-out;
+}
+
+#btn-download span::before {
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 0.5em solid transparent;
+	border-top-color: #000;
+	transform: translate(-50%, 0);
+}
+
+#btn-send {
+  cursor: pointer;
+  display: block;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  -webkit-tap-highlight-color: transparent;
+  position: absolute;
+  top: calc(50% - 23px);
+  left: calc(50% - 66px);
+  &:hover {
+    background: rgba(34, 50, 84, 0.05);
+    // transform: scale(2);
+  }
+  svg {
+    margin: 13px 0 0 8px;
+    fill: #000000;
+    // fill: none;
+    transform: translate3d(0, 0, 0);
+    polyline {
+      // stroke: #0077FF;
+      stroke: #000000;
+      stroke-width: 15;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: all .3s ease;
+      transition-delay: .3s;
+    }
+    path {
+      // stroke: #0077FF;
+      stroke: #000000;
+      stroke-width: 15;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      transition: all .3s ease;
+      transition-delay: .3s;
+    }
+    path#check {
+      stroke-dasharray: 38;
+      stroke-dashoffset: 114;
+      transition: all .4s ease;
+    }
+  }
+}
+#btn-send.downloaded {
+  svg {
+    .svg-out {
+      opacity: 0;
+      animation: drop .3s linear;
+      transition-delay: .4s;
+    }
+    path#check {
+      stroke: #20CCA5;
+      stroke-dashoffset: 174;
+      transition-delay: .4s;
+    }
+  }
+}
+
+#btn-send:hover span {
+  opacity: 1;
+  color: white;
+	transform: translate(-50%, 0);
+}
+
+#btn-send span {
+	position: absolute;
+	left: 50%;
+	bottom: 100%;
+	opacity: 0;
+	margin-bottom: 1em;
+	// padding: 1em;
+	background-color: #000;
+	font-size: 0.7em;
+	line-height: 1.6;
+	text-align: left;
+	white-space: nowrap;
+	transform: translate(-50%, 1em);
+	transition: all 0.15s ease-in-out;
+}
+
+#btn-send span::before {
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 0.5em solid transparent;
+	border-top-color: #000;
+	transform: translate(-50%, 0);
+}
+
+@keyframes drop {
+  20% {
+    transform: translate(0, -3px);
+  }
+
+  80% {
+    transform: translate(0, 2px);
+  }
+
+  95% {
+    transform: translate(0, 0);
+  }
+}
+
+.credit {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  transition: all .2s ease;
+  -webkit-user-select: none;
+  user-select: none;
+  opacity: .6;
+  img {
+    width: 72px;
+  }
+  &:hover {
+    transform: scale(0.95);
+  }
+}

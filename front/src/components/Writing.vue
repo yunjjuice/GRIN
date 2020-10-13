@@ -106,12 +106,73 @@
         <button @click="selectFont" class="font__min-gyeong">민경</button>
       </div>
       <div class="btn-group">
-        <button :disabled="content.length < 10" @click="showModal" class="btn">
-          <fa icon="paper-plane"></fa>
-        </button>
-        <button @click="saveDiary" class="btn">
-          <fa icon="file-download"></fa>
-        </button>
+        <div id="btn-send" @click="showModal">
+          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 434.958 434.958" style="enable-background:new 0 0 434.958 434.958;" xml:space="preserve" width="22" height="22">
+            <g>
+              <g>
+                <polygon points="129.777,0.278 104.598,227.593 118.168,229.096 141.844,15.351 419.884,46.147 389.871,317.16 295.825,391.13
+                  147.828,374.736 146.324,388.308 299.875,405.316 402.811,324.352 434.958,34.08" />
+              </g>
+            </g>
+            <g>
+              <g>
+                <path d="M343.66,116.673c-9.866-10.197-34.156-7.016-72.967-0.98c-19.511,3.034-60.109,9.347-63.191,2.572
+                  c-1.63-3.586-1.456-6.729,0.544-9.89c7.325-11.575,38.996-24.318,105.919-25.371c3.77-0.058,6.777-3.162,6.719-6.932
+                  c-0.058-3.77-3.169-6.76-6.932-6.719c-63.29,0.997-104.928,12.262-117.243,31.722c-4.499,7.11-4.995,15.007-1.435,22.842
+                  c7.016,15.425,34.104,12.051,77.718,5.268c22.144-3.444,55.608-8.648,61.056-3.017c0.473,0.49,1.254,1.381,1.171,1.857
+                  c-0.21,1.183-2.693,7.767-30.99,21.417c-54.429,26.259-59.45,32.519-57.933,40.544c1.57,8.301,11.273,9.037,25.958,10.151
+                  c15.674,1.19,39.363,2.988,40.974,14.78c0.468,3.422,3.395,5.903,6.755,5.903c0.309,0,0.62-0.022,0.934-0.065
+                  c3.736-0.51,6.351-3.953,5.84-7.689c-3.104-22.721-33.413-25.021-53.468-26.544c-2.656-0.201-5.769-0.437-8.527-0.729
+                  c6.243-4.139,19.14-11.387,45.399-24.055c25.247-12.177,36.76-21.543,38.501-31.321
+                  C349.338,125.495,347.721,120.87,343.66,116.673z"/>
+              </g>
+            </g>
+            <g>
+              <g>
+                <polygon points="300.22,295.159 289.937,396.421 303.52,397.8 312.416,310.207 394.674,319.075 396.136,305.5" />
+              </g>
+            </g>
+            <g>
+              <g>
+                <path d="M239.659,194.623c-1.442-1.439-3.451-2.156-5.48-1.958l-102.41,9.999c-1.574,0.154-3.046,0.85-4.164,1.968L2,330.237
+                  c-1.282,1.28-2,3.017-2,4.826c0,1.809,0.72,3.546,2,4.826l92.79,92.79c1.28,1.282,3.016,2,4.826,2c1.811,0,3.548-0.72,4.828-1.998
+                  l125.604-125.604c1.125-1.125,1.821-2.608,1.969-4.192l9.62-102.789C241.828,198.067,241.102,196.06,239.659,194.623z
+                  M218.653,299.162L99.616,418.198l-83.135-83.135l119.047-119.049l91.745-8.958L218.653,299.162z"/>
+              </g>
+            </g>
+            <g>
+              <g>
+                <rect x="170.301" y="192.201" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -130.235 200.6826)" width="13.653" height="130.695"/>
+              </g>
+            </g>
+            <g>
+              <g>
+                <rect x="198.824" y="197.163" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -101.7181 212.4996)" width="13.653" height="63.743"/>
+              </g>
+            </g>
+            <g>
+              <g>
+                <rect x="8.936" y="292.55" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -183.001 156.9498)" width="178.038" height="13.653"/>
+              </g>
+            </g>
+            <g>
+              <g>
+                <rect x="46.274" y="329.899" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -198.4723 194.2968)" width="178.055" height="13.653"/>
+              </g>
+            </g>
+          </svg>
+          <span>{{ msg }}</span>
+        </div>
+        <!-- 다운로드 버튼 -->
+        <div id="btn-download" @click="saveDiary">
+          <svg width="22px" height="16px" viewBox="0 0 22 16">
+            <path d="M2,10 L6,13 L12.8760559,4.5959317 C14.1180021,3.0779974 16.2457925,2.62289624 18,3.5 L18,3.5 C19.8385982,4.4192991 21,6.29848669 21,8.35410197 L21,10 C21,12.7614237 18.7614237,15 16,15 L1,15" id="check"></path>
+            <polyline points="4.5 8.5 8 11 11.5 8.5" class="svg-out"></polyline>
+            <path d="M8,1 L8,11" class="svg-out"></path>
+          </svg>
+          <span>일기 저장하기</span>
+        </div>
       </div>
     </div>
     <div class="writing__grid">
@@ -155,6 +216,10 @@ export default {
       content: "",
       refresh: true,
       action: [],
+      sendBtn: '',
+      downloadBtn: '',
+      msg: '10글자 이상 작성해주세요',
+      sendFlag: false,
     };
   },
   computed: {
@@ -186,6 +251,15 @@ export default {
       }
       console.log("d액션", this.action);
     },
+    content(newVal) {
+      if (newVal.length < 10) {
+        this.msg = '10글자 이상 작성해주세요';
+        this.sendFlag = false;
+      } else {
+        this.msg = '그림 그리기';
+        this.sendFlag = true;
+      }
+    },
   },
   created() {
     const date = new Date();
@@ -200,6 +274,9 @@ export default {
     this.action = weatherInfo.querySelectorAll("div");
     const fontSelector = document.querySelector(".font-selector__font-list");
     this.fontBtnList = fontSelector.querySelectorAll("button");
+
+    this.downloadBtn = document.querySelector('#btn-download');
+    this.sendBtn = document.querySelector('#btn-send');
   },
   methods: {
     init() {
@@ -232,6 +309,8 @@ export default {
       this.$refs.content.classList.add(this.fontMapList[fontName]);
     },
     showModal() {
+      if (!this.sendFlag) return;
+
       store.dispatch('windowStore/ACT_SM', true);
       store.dispatch('diaryStore/ACT_CONTENT', this.content);
     },
@@ -246,6 +325,7 @@ export default {
         return;
       }
 
+      this.downloadBtn.classList.add('downloaded');
       const el = this.$refs.canvas.$el;
       this.refresh = false;
       await el.toBlob((blob) => {
@@ -267,6 +347,9 @@ export default {
         });
         this.refresh = true;
       });
+      setTimeout(() => {
+        this.downloadBtn.classList.remove('downloaded');
+      }, 3000);
     },
   },
 };
@@ -274,6 +357,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "../style/writing.scss";
+@import "../style/downloadbutton.scss";
 
 .btn-group {
   position: absolute;

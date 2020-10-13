@@ -198,6 +198,7 @@ export default {
           await computedStyleToInlineStyle(document.querySelector(".day-info__weather2"), {
             recursive: true,
           });
+          await setTimeout(async () => { }, 10000);
         },
       });
       // window.open(output);

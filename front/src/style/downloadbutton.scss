@@ -182,6 +182,18 @@
 	transform: translate(-50%, 0);
 }
 
+#btn-drawing {
+  cursor: pointer;
+  display: block;
+  width: 91px;
+  // height: 48px;
+  // border-radius: 50%;
+  -webkit-tap-highlight-color: transparent;
+  position: absolute;
+  top: calc(50% - 12px);
+  left: calc(50% - 162px);
+}
+
 @keyframes drop {
   20% {
     transform: translate(0, -3px);

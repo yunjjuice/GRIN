@@ -4,7 +4,7 @@
       <div class="day-info__date">{{year}}년 {{month}}월 {{date}}일 ({{day}})</div>
       <div class="day-info__weather">
         <span>날씨</span>
-        <div > </div>
+        <div ></div>
         <svg
           class="weather__icon-sunny"
           xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +27,7 @@
             6s-6-2.686-6-6 2.686-6 6-6 6 2.686 6 6z"
           />
         </svg>
-        <div  > </div>
+        <div></div>
         <svg
           class="weather__icon-rainy"
           xmlns="http://www.w3.org/2000/svg"
@@ -46,6 +46,7 @@
             .551.449 1 1 1s1-.449 1-1v-8.866c.68-.226 1.27-.242 2 .023z"
           />
         </svg>
+        <div></div>
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24" height="24"
           viewBox="0 0 511.878 511.878" style="enable-background:new 0 0 511.878 511.878;" xml:space="preserve" class="weather__icon-thunder">
           <g>
@@ -69,6 +70,7 @@
             </g>
           </g>
         </svg>
+        <div></div>
         <svg
           class="weather__icon-cloudy"
           xmlns="http://www.w3.org/2000/svg"
@@ -96,7 +98,7 @@
       </div>
     </div>
     <div class="writing__drawing">
-      <drawing-canvas ref="canvas" v-if="refresh" />
+      <drawing-canvas ref="canvas" v-if="refresh" v-bind:grimMode="isGrimMode" />
     </div>
     <div class="writing__font-selector">
       <span>글꼴</span>
@@ -173,6 +175,7 @@
           </svg>
           <span>일기 저장하기</span>
         </div>
+        <button id="btn-drawing" @click="isGrimMode = !isGrimMode" > 그리기 모드 </button>
       </div>
     </div>
     <div class="writing__grid">
@@ -215,6 +218,7 @@ export default {
       day: "",
       content: "",
       refresh: true,
+      isGrimMode: false,
       action: [],
       sendBtn: '',
       downloadBtn: '',

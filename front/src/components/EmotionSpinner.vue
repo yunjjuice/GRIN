@@ -51,9 +51,9 @@ export default {
   methods: {
     setEmotion() {
       this.showEmotion = true;
-      console.log(this.getEmotion);
+      // console.log(this.getEmotion);
       this.emotion = emolist[this.getEmotion]; // 감정 언어로 정해줌
-      console.log(this.emotion);
+      // console.log(this.emotion);
       this.iconUrl = `/imgs/emotion/${emourllist[this.getEmotion]}.png`;
       this.tf = true;
       if (emourllist[this.getEmotion] === "happy") {

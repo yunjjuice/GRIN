@@ -4,6 +4,7 @@
       <div class="day-info__date">{{year}}년 {{month}}월 {{date}}일 ({{day}})</div>
       <div class="day-info__weather">
         <span>날씨</span>
+        <div > </div>
         <svg
           class="weather__icon-sunny"
           xmlns="http://www.w3.org/2000/svg"
@@ -26,6 +27,7 @@
             6s-6-2.686-6-6 2.686-6 6-6 6 2.686 6 6z"
           />
         </svg>
+        <div  > </div>
         <svg
           class="weather__icon-rainy"
           xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +55,9 @@
         >
           <path d="M14 19.25c0 .689-.559 1.25-1.25 1.25s-1.25-.561-1.25-1.25.559-1.25 1.25-1.25 1.25.561 1.25 1.25zm-3.75 1.25c-.691 0-1.25.561-1.25 1.25s.559 1.25 1.25 1.25 1.25-.561 1.25-1.25-.559-1.25-1.25-1.25zm8.75-1.25c0 .689-.559 1.25-1.25 1.25s-1.25-.561-1.25-1.25.559-1.25 1.25-1.25 1.25.561 1.25 1.25zm-3.75 1.25c-.691 0-1.25.561-1.25 1.25s.559 1.25 1.25 1.25 1.25-.561 1.25-1.25-.559-1.25-1.25-1.25zm-6.25-1.25c0 .689-.559 1.25-1.25 1.25s-1.25-.561-1.25-1.25.559-1.25 1.25-1.25 1.25.561 1.25 1.25zm-3.75 1.25c-.691 0-1.25.561-1.25 1.25s.559 1.25 1.25 1.25 1.25-.561 1.25-1.25-.559-1.25-1.25-1.25zm15.172-11.984c-.178-3.232-3.031-5.777-6.432-5.491-1.087-1.24-2.693-2.025-4.49-2.025-3.172 0-5.754 2.443-5.922 5.516-2.033.359-3.578 2.105-3.578 4.206 0 2.362 1.949 4.278 4.354 4.278h1.326c.771 1.198 2.124 2 3.674 2h10.291c2.406 0 4.355-1.916 4.355-4.278 0-2.101-1.545-3.847-3.578-4.206zm-15.395 4.484h-.673c-1.297 0-2.354-1.021-2.354-2.278 0-2.118 2.104-2.597 3.488-2.513-.05-1.355.137-5.209 4.012-5.209.967 0 1.714.25 2.29.645-1.823.921-3.096 2.745-3.212 4.871-2.022.357-3.697 2.127-3.551 4.484zm14.618 2h-10.291c-1.297 0-2.354-1.021-2.354-2.278 0-2.118 2.104-2.597 3.488-2.513-.05-1.355.137-5.209 4.012-5.209 3.771 0 4.229 3.771 4.012 5.209 1.509-.105 3.488.437 3.488 2.513 0 1.257-1.057 2.278-2.355 2.278z" />
         </svg> -->
+        <div > </div>
         <svg id="Capa_1" class="weather__icon-snowy" enable-background="new 0 0 512.002 512.002" height="512" viewBox="0 0 512.002 512.002" width="512" xmlns="http://www.w3.org/2000/svg"><g><path d="m121.001 331h16.973l-44.453 66.68c-2.387 3.58-3.121 8.012-2.017 12.17 1.104 4.159 3.94 7.643 7.789 9.566l51.708 25.854v51.73c0 6.624 4.345 12.464 10.689 14.367 6.411 1.923 13.226-.638 16.833-6.11l60-91c2.361-3.581 3.076-8.001 1.965-12.144s-3.942-7.611-7.779-9.529l-51.708-25.854v-35.73h136.973l-44.453 66.68c-2.387 3.58-3.121 8.012-2.017 12.17 1.104 4.159 3.94 7.643 7.789 9.566l51.708 25.854v51.73c0 6.624 4.345 12.464 10.689 14.367 6.411 1.923 13.226-.638 16.833-6.11l60-91c2.361-3.581 3.076-8.001 1.965-12.144s-3.942-7.611-7.779-9.529l-51.708-25.854v-35.73h60c49.922 0 91-40.431 91-90 0-49.52-41.033-90-91-90-.501 0-1.003.004-1.504.013-6.248-30.683-31.289-54.618-62.534-59.214-13.244-53.118-61.092-91.799-115.962-91.799-54.894 0-102.314 38.259-115.749 91.118-1.397-.076-2.812-.118-4.251-.118-66.72 0-121 53.832-121 120s54.28 120 121 120zm83.172 80.856-23.172 35.144v-11c0-5.682-3.21-10.876-8.292-13.416l-44.802-22.401 23.094-34.641v10.458c0 5.682 3.21 10.876 8.292 13.416zm180 0-23.172 35.144v-11c0-5.682-3.21-10.876-8.292-13.416l-44.802-22.401 23.094-34.641v10.458c0 5.682 3.21 10.876 8.292 13.416zm-263.172-290.856c4.362 0 8.74.635 14.011 1.466 8.396 1.318 16.143-4.57 17.213-12.908 5.82-45.356 43.985-79.558 88.776-79.558 44.168 0 82.281 33.649 88.654 78.271 1.101 7.713 8.089 13.845 17.082 12.734 24.229.39 43.863 20.024 44.258 44.251-1.385 11.15 8.215 18.96 17.867 16.973 3.975-.815 8.059-1.229 12.139-1.229 33.636 0 61 26.916 61 60s-27.364 60-61 60h-300c-50.178 0-91-40.374-91-90s40.822-90 91-90z"/></g></svg>
+        <div > </div>
         <svg
           class="weather__icon-cloudy"
           xmlns="http://www.w3.org/2000/svg"
@@ -79,6 +83,9 @@
           />
         </svg>
       </div>
+    </div>
+    <div class="box">
+    <img :src="imgsrc" />
     </div>
     <div class="writing__drawing">
       <drawing-canvas ref="canvas" v-if="refresh" />
@@ -120,6 +127,7 @@ export default {
   },
   data() {
     return {
+      imgscr: '/imgs/emotion/sad.png',
       gridRow: 5,
       gridColumn: 10,
       weatherIconList: [],
@@ -138,6 +146,7 @@ export default {
       day: "",
       content: "",
       refresh: true,
+      action: [],
     };
   },
   computed: {
@@ -146,12 +155,28 @@ export default {
   watch: {
     emotion(newVal) {
       if (newVal >= 0 && newVal < 4) {
+        console.log("durl ", this.action);
         this.changeWeather(this.weatherIconList[newVal]);
       } else {
         this.weatherIconList.forEach((elem) => {
           elem.classList.remove("selected");
         });
       }
+      console.log("newVal ", newVal);
+      if (newVal === '0') {
+        setTimeout(() => { this.action[newVal].classList.add('pulse-loader-sunny'); }, 8000);
+        setTimeout(() => { this.action[newVal].classList.remove('pulse-loader-sunny'); }, 11000);
+      } else if (newVal === '1') {
+        setTimeout(() => { this.action[newVal].classList.add('pulse-loader-cloudy'); }, 8000);
+        setTimeout(() => { this.action[newVal].classList.remove('pulse-loader-cloudy'); }, 11000);
+      } else if (newVal === '2') {
+        setTimeout(() => { this.action[newVal].classList.add('pulse-loader-rainy'); }, 8000);
+        setTimeout(() => { this.action[newVal].classList.remove('pulse-loader-rainy'); }, 11000);
+      } else if (newVal === '3') {
+        setTimeout(() => { this.action[newVal].classList.add('pulse-loader-snowy'); }, 8000);
+        setTimeout(() => { this.action[newVal].classList.remove('pulse-loader-snowy'); }, 11000);
+      }
+      console.log("d액션", this.action);
     },
   },
   created() {
@@ -164,7 +189,7 @@ export default {
   mounted() {
     const weatherInfo = document.querySelector(".day-info__weather");
     this.weatherIconList = weatherInfo.querySelectorAll("svg");
-
+    this.action = weatherInfo.querySelectorAll("div");
     const fontSelector = document.querySelector(".font-selector__font-list");
     this.fontBtnList = fontSelector.querySelectorAll("button");
   },
@@ -266,7 +291,7 @@ export default {
 .cloudy {
   position: absolute;
   width: 60px;
-  right: 92px;
+  right: 90px;
 }
 .rainy {
   position: absolute;
@@ -277,5 +302,303 @@ export default {
   position: absolute;
   width: 60px;
   right: 10px;
+}
+.pulse-loader-sunny:not(:required) {
+  display: inline-block;
+  position: absolute;
+  right: 147px;
+  width: 50px;
+  height: 50px;
+  z-index: -100;
+  -moz-animation: pulse-loader-sunny 0.7s linear infinite alternate;
+  -webkit-animation: pulse-loader-sunny 0.7s linear infinite alternate;
+  animation: pulse-loader-sunny 0.7s linear infinite alternate;
+  border: 2px solid #f73939;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  overflow: hidden;
+  text-indent: 50px;
+}
+
+@-moz-keyframes pulse-loader-sunny {
+  0% {
+    -moz-box-shadow: #f73939 0 0 0px 20px;
+    box-shadow: #f73939 0 0 0px 20px;
+  }
+  40% {
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+  100% {
+    -moz-box-shadow: #f73939 0 0 0px 25px inset;
+    box-shadow: #f73939 0 0 0px 25px inset;
+  }
+}
+@-webkit-keyframes pulse-loader-sunny {
+  0% {
+    -webkit-box-shadow: #f73939 0 0 0px 20px;
+    box-shadow: #f73939 0 0 0px 20px;
+  }
+  40% {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  100% {
+    -webkit-box-shadow: #f73939 0 0 0px 25px inset;
+    box-shadow: #f73939 0 0 0px 25px inset;
+  }
+}
+@keyframes pulse-loader-sunny {
+  0% {
+    -moz-box-shadow: #f73939 0 0 0px 20px;
+    -webkit-box-shadow: #f73939 0 0 0px 20px;
+    box-shadow: #f73939 0 0 0px 20px;
+  }
+  40% {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  100% {
+    -moz-box-shadow: #f73939 0 0 0px 25px inset;
+    -webkit-box-shadow: #f73939 0 0 0px 25px inset;
+    box-shadow: #f73939 0 0 0px 25px inset;
+  }
+}
+.pulse-loader-cloudy:not(:required) {
+  display: inline-block;
+  position: absolute;
+  right: 103px;
+  width: 50px;
+  height: 50px;
+  z-index: -100;
+  -moz-animation: pulse-loader-cloudy 0.7s linear infinite alternate;
+  -webkit-animation: pulse-loader-cloudy 0.7s linear infinite alternate;
+  animation: pulse-loader-cloudy 0.7s linear infinite alternate;
+  // border: 2px solid #0721b3;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  overflow: hidden;
+  text-indent: 50px;
+}
+
+@-moz-keyframes pulse-loader-cloudy {
+  0% {
+    -moz-box-shadow: #011cb8 0 0 0px 20px;
+    box-shadow: #011cb8 0 0 0px 20px;
+  }
+  40% {
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+  100% {
+    -moz-box-shadow: #011cb8 0 0 0px 25px inset;
+    box-shadow: #011cb8 0 0 0px 25px inset;
+  }
+}
+@-webkit-keyframes pulse-loader-cloudy {
+  0% {
+    -webkit-box-shadow: #011cb8 0 0 0px 20px;
+    box-shadow: #011cb8 0 0 0px 20px;
+  }
+  40% {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  100% {
+    -webkit-box-shadow: #011cb8 0 0 0px 25px inset;
+    box-shadow: #011cb8 0 0 0px 25px inset;
+  }
+}
+@keyframes pulse-loader-cloudy {
+  0% {
+    -moz-box-shadow: #011cb8 0 0 0px 20px;
+    -webkit-box-shadow: #011cb8 0 0 0px 20px;
+    box-shadow: #011cb8 0 0 0px 20px;
+  }
+  40% {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  100% {
+    -moz-box-shadow: #011cb8 0 0 0px 25px inset;
+    -webkit-box-shadow: #011cb8 0 0 0px 25px inset;
+    box-shadow: #011cb8 0 0 0px 25px inset;
+  }
+}
+.pulse-loader-rainy:not(:required) {
+  display: inline-block;
+  position: absolute;
+  right: 55px;
+  width: 50px;
+  height: 50px;
+  // z-index: -100;
+  -moz-animation: pulse-loader-rainy 0.7s linear infinite alternate;
+  -webkit-animation: pulse-loader-rainy 0.7s linear infinite alternate;
+  animation: pulse-loader-rainy 0.7s linear infinite alternate;
+  border: 2px solid #ffe70c;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  overflow: hidden;
+  text-indent: 50px;
+}
+
+@-moz-keyframes pulse-loader-rainy {
+  0% {
+    -moz-box-shadow: #ffe70c 0 0 0px 20px;
+    box-shadow: #ffe70c 0 0 0px 20px;
+  }
+  40% {
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+  100% {
+    -moz-box-shadow: #ffe70c 0 0 0px 25px inset;
+    box-shadow: #ffe70c 0 0 0px 25px inset;
+  }
+}
+@-webkit-keyframes pulse-loader-rainy {
+  0% {
+    -webkit-box-shadow: #ffe70c 0 0 0px 20px;
+    box-shadow: #ffe70c 0 0 0px 20px;
+  }
+  40% {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  100% {
+    -webkit-box-shadow: #ffe70c 0 0 0px 25px inset;
+    box-shadow: #ffe70c 0 0 0px 25px inset;
+  }
+}
+@keyframes pulse-loader-rainy {
+  0% {
+    -moz-box-shadow: #ffe70c 0 0 0px 20px;
+    -webkit-box-shadow: #ffe70c 0 0 0px 20px;
+    box-shadow: #ffe70c 0 0 0px 20px;
+  }
+  40% {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  100% {
+    -moz-box-shadow: #ffe70c 0 0 0px 25px inset;
+    -webkit-box-shadow: #ffe70c 0 0 0px 25px inset;
+    box-shadow: #ffe70c 0 0 0px 25px inset;
+  }
+}
+.pulse-loader-snowy:not(:required) {
+  display: inline-block;
+  position: absolute;
+  right: 8px;
+  width: 50px;
+  height: 50px;
+  // z-index: -100;
+  -moz-animation: pulse-loader-snowy 0.7s linear infinite alternate;
+  -webkit-animation: pulse-loader-snowy 0.7s linear infinite alternate;
+  animation: pulse-loader-snowy 0.7s linear infinite alternate;
+  border: 2px solid #1dcc1d;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  overflow: hidden;
+  text-indent: 50px;
+}
+
+@-moz-keyframes pulse-loader-snowy {
+  0% {
+    -moz-box-shadow: #1dcc1d 0 0 0px 20px;
+    box-shadow: #1dcc1d 0 0 0px 20px;
+  }
+  40% {
+    -moz-box-shadow: none;
+    box-shadow: none;
+  }
+  100% {
+    -moz-box-shadow: #1dcc1d 0 0 0px 25px inset;
+    box-shadow: #1dcc1d 0 0 0px 25px inset;
+  }
+}
+@-webkit-keyframes pulse-loader-snowy {
+  0% {
+    -webkit-box-shadow: #1dcc1d 0 0 0px 20px;
+    box-shadow: #1dcc1d 0 0 0px 20px;
+  }
+  40% {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  100% {
+    -webkit-box-shadow: #1dcc1d 0 0 0px 25px inset;
+    box-shadow: #1dcc1d 0 0 0px 25px inset;
+  }
+}
+@keyframes pulse-loader-snowy {
+  0% {
+    -moz-box-shadow: #1dcc1d 0 0 0px 20px;
+    -webkit-box-shadow: #1dcc1d 0 0 0px 20px;
+    box-shadow: #1dcc1d 0 0 0px 20px;
+  }
+  40% {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  100% {
+    -moz-box-shadow: #1dcc1d 0 0 0px 25px inset;
+    -webkit-box-shadow: #1dcc1d 0 0 0px 25px inset;
+    box-shadow: #1dcc1d 0 0 0px 25px inset;
+  }
+}
+.row {
+  margin-top: 50px;
+}
+body,html {
+  margin: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.col-sm-2 {
+  height: 100px;
+}
+.box {
+    display: flex;
+    /* width: 100px;
+    height: 100px; */
+    background-color: red;
+    font-size: 20px;
+    left: center;
+    top: center;
+    transform: (10px, 10px);
+    position:absolute;
+    -webkit-transition-property: width height background-font-size left top color;
+    transition-duration:2s;
+    transition-delay:0.5s;
+    transition-timing-function: linear;
+}
+.box1{
+    display: flex;
+    /* width: 50px;
+    height: 50px; */
+    background-color: blue;
+    /* color: yellow; */
+    font-size: 18px;
+    left: 192px;
+    top:0px;
+    position:absolute;
+     -webkit-transition-property: width height background-color font-size left top color;
+    -webkit-transition-duration:2s;
+    -webkit-transition-delay:0.5s;
+    -webkit-transition-timing-function: linear;
+    transition-property: width height background-color font-size left top color;
+    transition-duration:2s;
+    transition-delay:0.5s;
+    transition-timing-function: linear;
 }
 </style>

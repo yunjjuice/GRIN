@@ -3,10 +3,10 @@
 
 <div v-if="this.showEmotion" >
   <div class="emotion-string">
-<span class = "font__se-han">당신의 감정은 <strong>{{emotion}}</strong>입니다</span>
+<span class = "font__se-han" >당신의 감정은 <strong>{{emotion}}</strong>입니다</span>
 </div>
-<img :src="iconUrl" />
 </div>
+<img :src="iconUrl" class="box" v-if="tf"/>
 <div id="steps" v-if="!this.showEmotion" v-bind:class="className"></div>
 <!-- <div id="transition"></div> -->
 </div>
@@ -21,6 +21,11 @@ export default {
   data() {
     return {
       //   class: 'test 0.5s infinite',
+      tf: false,
+      tf1: false,
+      tf2: false,
+      tf3: false,
+      tf4: false,
       className: 'animation1',
       showEmotion: false,
       emotion: "",
@@ -33,6 +38,7 @@ export default {
         if (this.isExistEmotion) { // 감정분석이 끝났으면
           this.className = 'animation2'; // 속도 느리게
           await setTimeout(async () => { await this.setEmotion(); }, 3000);
+          await setInterval(async () => { this.updateTransition(); }, 4000);
           await setTimeout(async () => { store.dispatch('windowStore/ACT_EXIST_EMOTION', false); store.dispatch('windowStore/ACT_EMOTION_SPIN', false); }, 8000);
         }
       },
@@ -49,6 +55,56 @@ export default {
       this.emotion = emolist[this.getEmotion]; // 감정 언어로 정해줌
       console.log(this.emotion);
       this.iconUrl = `/imgs/emotion/${emourllist[this.getEmotion]}.png`;
+      this.tf = true;
+      if (emourllist[this.getEmotion] === "happy") {
+        this.tf1 = true;
+      } else if (emourllist[this.getEmotion] === "sad") {
+        this.tf2 = true;
+      } else if (emourllist[this.getEmotion] === "angry") {
+        this.tf3 = true;
+      } else if (emourllist[this.getEmotion] === "soso") {
+        this.tf4 = true;
+      }
+      // window.setTimeout(this.updateTransition(), 3000);
+      // let el = document.querySelector("div.box");
+      // if (el) {
+      //   el.className = "box1";
+      // } else {
+      //   el = document.querySelector("div.box1");
+      //   el.className = "box";
+      // }
+    },
+    updateTransition() {
+      let el = document.querySelector("img.box");
+      if (el) {
+        if (this.tf1) {
+          el.className = "box1";
+        } else if (this.tf2) {
+          el.className = "box2";
+        } else if (this.tf3) {
+          el.className = "box3";
+        } else if (this.tf4) {
+          el.className = "box4";
+        }
+      } else if (!el) {
+        if (this.tf1) {
+          el = document.querySelector("img.box1");
+          el.className = "box";
+          this.tf1 = false;
+        } else if (this.tf2) {
+          el = document.querySelector("img.box2");
+          el.className = "box";
+          this.tf2 = false;
+        } else if (this.tf3) {
+          el = document.querySelector("img.box3");
+          el.className = "box";
+          this.tf3 = false;
+        } else if (this.tf4) {
+          el = document.querySelector("img.box4");
+          el.className = "box";
+          this.tf4 = false;
+        }
+      }
     },
   },
 };
@@ -116,11 +172,98 @@ export default {
   background: rgba(0,0,0,0.5);
 }
 .emotion-string{
+  text-align: center;
   background-color: white;
   border-radius: 5px;
   height : 50px;
+  left: 50%;
+  top: 80%;
+  /* position:absolute; */
 }
-
+.box {
+    text-align: center;
+    display: block; margin: 0px auto;
+    width: 500px;
+    height: 500px;
+    /* background-color: red; */
+    font-size: 20px;
+    left: 37%;
+    top: 25%;
+    position:absolute;
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    -webkit-transition-property: width height background-color font-size left top color;
+    -webkit-transition-duration:2s;
+    -webkit-transition-timing-function: ease;
+    transition-property: width height background-color font-size left top color;
+    transition-duration:2s;
+    transition-timing-function: ease;
+}
+.box1{
+    width: 50px;
+    height: 50px;
+    /* background-color: blue;
+    color: yellow; */
+    font-size: 18px;
+    left: 59.9%;
+    top: 13%;
+    position:absolute;
+    -webkit-transition-property: width height background-color font-size left top color;
+    -webkit-transition-duration:2s;
+    -webkit-transition-timing-function: ease;
+    transition-property: width height background-color font-size left top color;
+    transition-duration:2s;
+    transition-timing-function: ease;
+}
+.box2{
+    width: 50px;
+    height: 50px;
+    /* background-color: blue;
+    color: yellow; */
+    font-size: 18px;
+    left: 62.2%;
+    top: 13%;
+    position:absolute;
+    -webkit-transition-property: width height background-color font-size left top color;
+    -webkit-transition-duration:2s;
+    -webkit-transition-timing-function: ease;
+    transition-property: width height background-color font-size left top color;
+    transition-duration:2s;
+    transition-timing-function: ease;
+}
+.box3{
+    width: 50px;
+    height: 50px;
+    /* background-color: blue;
+    color: yellow; */
+    font-size: 18px;
+    left: 64.5%;
+    top: 13%;
+    position:absolute;
+    -webkit-transition-property: width height background-color font-size left top color;
+    -webkit-transition-duration:2s;
+    -webkit-transition-timing-function: ease;
+    transition-property: width height background-color font-size left top color;
+    transition-duration:2s;
+    transition-timing-function: ease;
+}
+.box4{
+    width: 50px;
+    height: 50px;
+    /* background-color: blue;
+    color: yellow; */
+    font-size: 18px;
+    left: 67%;
+    top: 13%;
+    position:absolute;
+    -webkit-transition-property: width height background-color font-size left top color;
+    -webkit-transition-duration:2s;
+    -webkit-transition-timing-function: ease;
+    transition-property: width height background-color font-size left top color;
+    transition-duration:2s;
+    transition-timing-function: ease;
+}
 span{
   padding-left: 100px;
   text-align: center;

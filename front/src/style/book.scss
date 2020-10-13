@@ -78,6 +78,8 @@ Table of Contents
 
 .paperback_front::after {
   position: absolute;
+  border: 8px solid black;
+  border-radius: 5px 25px 25px 5px;
   top: 0;
   left: 0;
   bottom: 0;
@@ -155,7 +157,7 @@ Table of Contents
 .paperback_back,
 .paperback_front li,
 .paperback_back li {
-  border-radius: 2px 8px 8px 2px;
+  border-radius: 5px 25px 25px 5px;
   position: absolute;
   top: 0;
   left: 0px;
@@ -181,14 +183,14 @@ Table of Contents
 
 .paperback_front li,
 .paperback_back li {
-  border-radius: 2px 8px 8px 2px;
+  border-radius: 5px 25px 25px 5px;
   position: absolute;
   top: 0;
   left: 0;
   box-shadow: 0.5px 1px 3px rgba(0, 0, 0, 0.05), 0px -1px 10px rgba(0, 0, 0, 0.05);
 
   img {
-    border-radius: 2px 8px 8px 2px;
+    border-radius: 5px 25px 25px 5px;
   }
 
   .back-space {
@@ -200,7 +202,7 @@ Table of Contents
     background: white;
     transform: rotateY(180deg);
     backface-visibility: hidden;
-    border-radius: 8px 2px 2px 8px;
+    border-radius: 25px 5px 5px 25px;
   }
 }
 
@@ -293,7 +295,7 @@ Table of Contents
 	5. events
 */
 
-$open-deg: -175deg;
+$open-deg: -180deg;
 $total-page: 6;
 $cur-page: 0;
 
@@ -503,6 +505,23 @@ $cur-page: 0;
 .ribbon--color10::after{
   border-bottom: 20px solid #FDD676;
 }
+
+.front-wrap{
+  position: relative;
+  height: 100%;
+}
+
+.front-title{
+  position: absolute;
+  top:20%;
+  left:25%;
+  width:50%;
+
+  img{
+    width:100%;
+  }
+}
+
 
 /* Media Queries */
 @media screen and (max-width: 40em) {

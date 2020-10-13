@@ -9,6 +9,11 @@ const routes = [
     name: 'Home',
     component: () => import('@/views/Home.vue'),
   },
+  {
+    path: '/canvas',
+    name: 'Canvas',
+    component: () => import('@/components/CanvasDrawing.vue'),
+  },
 ];
 
 const router = new VueRouter({

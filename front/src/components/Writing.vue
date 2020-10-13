@@ -96,7 +96,7 @@
       </div>
     </div>
     <div class="writing__drawing">
-      <drawing-canvas ref="canvas" v-if="refresh" />
+      <drawing-canvas ref="canvas" v-if="refresh" v-bind:grimMode="isGrimMode" />
     </div>
     <div class="writing__font-selector">
       <span>글꼴</span>
@@ -106,6 +106,7 @@
         <button @click="selectFont" class="font__min-gyeong">민경</button>
       </div>
       <div class="btn-group">
+        <button @click="isGrimMode = !isGrimMode" > 그리기 모드 </button>
         <button :disabled="content.length < 10" @click="showModal" class="btn">
           <fa icon="paper-plane"></fa>
         </button>
@@ -154,6 +155,7 @@ export default {
       day: "",
       content: "",
       refresh: true,
+      isGrimMode: false,
       action: [],
     };
   },

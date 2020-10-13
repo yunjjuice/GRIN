@@ -22,7 +22,7 @@ export default {
       bookCoverBasePath: "/imgs/bookcovers/",
       bookCoverRibbonColors: ["#EEADDA", "#EEDFE0", "#fff5fc"],
       bookCoverColors: ["white", "#9E6B6D", "#FFF2FC", "#727272", "#c3fffc", "#FDF5D3", "#808e97", "#FEF5C6", "#FE9C70", "#bfa8f8"],
-      bookCoverNum: 11,
+      bookCoverNum: 20,
     };
   },
   methods: {

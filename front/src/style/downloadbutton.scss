@@ -1,3 +1,5 @@
+/* 일기 저장하기 버튼 */
+
 #btn-download {
   cursor: pointer;
   display: block;
@@ -10,6 +12,13 @@
   left: calc(50% - 35px);
   &:hover {
     background: rgba(34, 50, 84, 0.05);
+    /* 마우스 호버시 툴팁 보이게 */
+    span {
+      opacity: 1;
+      visibility: visible;
+      color: white;
+      transform: translate(-50%, 0);
+    }
   }
   svg {
     margin: 16px 0 0 16px;
@@ -55,39 +64,33 @@
   }
 }
 
-#btn-download:hover span {
-  opacity: 1;
-  color: white;
-	transform: translate(-50%, 0);
-}
-
 #btn-download span {
 	position: absolute;
 	left: 50%;
 	bottom: 100%;
-	opacity: 0;
+  opacity: 0;
+  visibility: hidden;
 	margin-bottom: 1em;
-	// padding: 1em;
 	background-color: #000;
 	font-size: 0.7em;
 	line-height: 1.6;
 	text-align: left;
 	white-space: nowrap;
 	transform: translate(-50%, 1em);
-	transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  &::before {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 0.5em solid transparent;
+    border-top-color: #000;
+    transform: translate(-50%, 0);
+  }
 }
 
-#btn-download span::before {
-	content: '';
-	position: absolute;
-	top: 100%;
-	left: 50%;
-	width: 0;
-	height: 0;
-	border: 0.5em solid transparent;
-	border-top-color: #000;
-	transform: translate(-50%, 0);
-}
+/* 모달창 띄우기 버튼 */
 
 #btn-send {
   cursor: pointer;
@@ -101,7 +104,12 @@
   left: calc(50% - 66px);
   &:hover {
     background: rgba(34, 50, 84, 0.05);
-    // transform: scale(2);
+    span {
+      opacity: 1;
+      visibility: visible;
+      color: white;
+      transform: translate(-50%, 0);
+    }
   }
   svg {
     margin: 13px 0 0 8px;
@@ -148,17 +156,12 @@
   }
 }
 
-#btn-send:hover span {
-  opacity: 1;
-  color: white;
-	transform: translate(-50%, 0);
-}
-
 #btn-send span {
 	position: absolute;
 	left: 50%;
 	bottom: 100%;
 	opacity: 0;
+  visibility: hidden;
 	margin-bottom: 1em;
 	// padding: 1em;
 	background-color: #000;
@@ -167,20 +170,20 @@
 	text-align: left;
 	white-space: nowrap;
 	transform: translate(-50%, 1em);
-	transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  &::before {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 0.5em solid transparent;
+    border-top-color: #000;
+    transform: translate(-50%, 0);
+  }
 }
 
-#btn-send span::before {
-	content: '';
-	position: absolute;
-	top: 100%;
-	left: 50%;
-	width: 0;
-	height: 0;
-	border: 0.5em solid transparent;
-	border-top-color: #000;
-	transform: translate(-50%, 0);
-}
+/* 그림 그리기 모드 버튼 */
 
 #btn-drawing {
   cursor: pointer;

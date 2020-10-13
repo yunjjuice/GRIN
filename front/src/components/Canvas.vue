@@ -1,5 +1,8 @@
 <template>
-  <canvas ref="canvas" width="443" height="307"></canvas>
+<div id="stage">
+ <canvas id="newlayer" ref="canvas" width="443" height="307"></canvas>
+ <canvas id="background-layer" ref="newcanvas" width="443" height="307"></canvas>
+</div>
 </template>
 
 <script>
@@ -30,6 +33,7 @@ export default {
       imgs: [],
       imageInfos: [],
       canvas: undefined,
+      canvasD: undefined,
       ctx: undefined,
       loadCount: 0,
       x: 0,
@@ -67,10 +71,16 @@ export default {
       this.canvas = this.$refs.canvas;
       this.ctx = this.canvas.getContext("2d");
       if (this.grimMode) {
+        this.canvas.removeEventListener("mousedown", this.handleMouseDown);
+        this.canvas.removeEventListener("mousemove", this.handleMouseMove);
+        document.removeEventListener("mouseup", this.handleMouseUp);
         this.canvas.addEventListener("mousedown", this.beginDrawing);
         this.canvas.addEventListener("mousemove", this.drawing);
         document.addEventListener("mouseup", this.stopDrawing);
       } else {
+        this.canvas.removeEventListener("mousedown", this.beginDrawing);
+        this.canvas.removeEventListener("mousemove", this.drawing);
+        document.removeEventListener("mouseup", this.stopDrawing);
         this.canvas.addEventListener("mousedown", this.handleMouseDown);
         this.canvas.addEventListener("mousemove", this.handleMouseMove);
         document.addEventListener("mouseup", this.handleMouseUp);
@@ -254,6 +264,7 @@ export default {
       }
     },
     render() {
+      this.ctx = this.canvas.getContext("2d");
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
       for (let i = 0; i < this.imageInfos.length; i += 1) {
         const info = this.imageInfos[i];
@@ -394,6 +405,8 @@ export default {
     drawing(e) {
       if (this.isDrawing) {
         this.drawLine(this.x, this.y, e.offsetX, e.offsetY);
+        console.log("xx ", e.offsetX);
+        console.log("this.drawingImage.s ", this.drawingImage.sx);
         this.drawingImage.sx = Math.min(e.offsetX, this.drawingImage.sx);
         this.drawingImage.sy = Math.min(e.offsetY, this.drawingImage.sy);
         this.drawingImage.dx = Math.max(e.offsetX, this.drawingImage.dx);
@@ -403,11 +416,13 @@ export default {
       }
     },
     beginDrawing(e) {
+      this.canvasD = document.getElementById("background-layer");
+      this.ctx = this.canvasD.getContext("2d");
       this.x = e.offsetX;
       this.y = e.offsetY;
       this.isDrawing = true;
     },
-    stopDrawing(e) {
+    async stopDrawing(e) {
       const img = new Image();
       // const newImage = new Image();
       if (this.isDrawing) {
@@ -415,7 +430,8 @@ export default {
         this.x = 0;
         this.y = 0;
         this.isDrawing = false;
-        img.onload = () => {
+        img.src = this.canvasD.toDataURL();
+        img.onload = async () => {
           const oCanvas = document.createElement('canvas');
           oCanvas.width = this.drawingImage.dx - this.drawingImage.sx;
           oCanvas.height = this.drawingImage.dy - this.drawingImage.sy;
@@ -425,6 +441,7 @@ export default {
           console.log(this.loadCount);
           this.imgs[this.loadCount] = new Image();
           this.imgs[this.loadCount].src = oCanvas.toDataURL();
+          this.imgs[this.loadCount].crossOrigin = "Anonymous";
           this.imageInfos[this.loadCount] = new ImageInfo(
             this.drawingImage.sx,
             this.drawingImage.sy,
@@ -434,18 +451,27 @@ export default {
           );
           this.imgs[this.loadCount].style.display = 'none';
           this.loadCount += 1;
+          this.drawingImage.sx = Number.MAX_VALUE;
+          this.drawingImage.sy = Number.MAX_VALUE;
+          this.drawingImage.dy = 0;
+          this.drawingImage.dx = 0;
+          await this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+          this.render();
         };
-        img.src = this.canvas.toDataURL();
       }
-      console.log(this.imgs);
     },
   },
-  // mounted() {
-  //   this.imageLoad();
-  // },
 };
 </script>
 
 <style lang="scss" scoped>
+#stage {
+    width: 443px;
+    height: 307px;
+    position: relative;
+  }
 
+  canvas { position: absolute; }
+  #newlayer { z-index: 2; }
+  #background-layer { z-index: 1; }
 </style>

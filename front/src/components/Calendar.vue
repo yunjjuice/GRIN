@@ -111,12 +111,13 @@ export default {
     },
     async getdiaries() {
       await api.get(`diary/?user=${this.$session.get('user_id')}`)
-        .then(({ data }) => {
+        .then(async ({ data }) => {
           this.diaryData = data;
           this.diaryData.forEach((item) => {
             item.createdate = moment(new Date(item.createdate)).format('yyyy-M-D');
           });
           console.log('get diary', data);
+          await store.dispatch('diaryStore/ACT_DIARIES', data);
         })
         .catch((err) => console.log(err));
     },

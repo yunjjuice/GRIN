@@ -16,7 +16,12 @@
       </div>
       <div class="group">
         <div style="font-family: 'GmarketSansMedium';">감정리스트</div>
-        <div class="sketchy">슬픔 0개</div>
+        <div class="sketchy">
+          <img class="emotion" :src="emotionList[0]"/> : {{happy}}
+          <img class="emotion" :src="emotionList[1]"/> : {{sad}}
+          <img class="emotion" :src="emotionList[2]"/> : {{angry}}
+          <img class="emotion" :src="emotionList[3]"/> : {{soso}}
+        </div>
       </div>
     </div>
     <div style="text-align:center;">
@@ -36,6 +41,16 @@ export default {
   data() {
     return {
       userInfo: {},
+      happy: 0,
+      sad: 0,
+      angry: 0,
+      soso: 0,
+      emotionList: [
+        'imgs/emotion/happy.png',
+        'imgs/emotion/sad.png',
+        'imgs/emotion/angry.png',
+        'imgs/emotion/soso.png',
+      ],
     };
   },
   created() {
@@ -52,6 +67,24 @@ export default {
         console.log(err);
         this.$toast.errer('유저 정보 불러오기 실패');
       });
+  },
+  computed: {
+    diaries: () => store.getters['diaryStore/GET_DIARIES'],
+  },
+  watch: {
+    diaries(diarylist) {
+      diarylist.forEach((diary) => {
+        if (diary.emotion === 0) {
+          this.happy += 1;
+        } else if (diary.emotion === 1) {
+          this.sad += 1;
+        } else if (diary.emotion === 2) {
+          this.angry += 1;
+        } else if (diary.emotion === 3) {
+          this.soso += 1;
+        }
+      });
+    },
   },
   methods: {
     editProfile() {

@@ -200,6 +200,7 @@ export default {
           await computedStyleToInlineStyle(document.querySelector("#capture"), {
             recursive: true,
           });
+          await setTimeout(async () => { }, 10000);
         },
       });
 

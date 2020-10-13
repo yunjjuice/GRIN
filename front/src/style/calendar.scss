@@ -9,8 +9,8 @@ html { height: 100%; }
 	margin: 0;
 }
 .clearfix:before,.clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+	content: " "; /* 1 */
+	display: table; /* 2 */
 }
 .clearfix:after { clear: both;}
 .clearfix {    *zoom: 1;}
@@ -61,50 +61,66 @@ section, .main {
 	border: 1px solid #ddd;
 }
 .calendar__grid {
-    width: 100%;
-    height:100%;
-    display: grid;
-    grid-template-rows: repeat(6, 1fr);
-    grid-template-columns: repeat(7, 1fr);
-    .date{
-        font-size: 1.2rem;
-        color: #686a6e;
-        width:100%;
-    }
+	width: 100%;
+	height:100%;
+	display: grid;
+	grid-template-rows: repeat(6, 1fr);
+	grid-template-columns: repeat(7, 1fr);
+	.date{
+		font-size: 1.2rem;
+		// color: #686a6e;
+		// width:100%;
+	}
 
-    &> div:empty {
-        background: transparent;
-        cursor: default;
-    }
+	&> div:empty {
+		background: transparent;
+		cursor: default;
+	}
 
-    &>div {
-        justify-content: center;
-        align-items: center;
-        background: #fff;
-        border: 1px solid #ddd;
+	&>div {
+		justify-content: center;
+		align-items: center;
+		background: #fff;
+		border: 1px solid #ddd;
 
-        &:nth-child(7n) {
-            color: dodgerblue;
-        }
+		&:nth-child(7n) {
+			color: dodgerblue;
+		}
 
-        &:nth-child(7n + 1) {
-            color: rgb(238, 105, 127);
-        }
-    }
-    .picture{
-        margin:auto;
-        width: 90%;
+		&:nth-child(7n + 1) {
+			color: rgb(238, 105, 127);
+		}
+	}
+
+	.emotion {
+		transition: transform .2s;
+		width:25px;
+		object-fit: cover;
+		position: inherit;
+		&:hover {
+			opacity: 1;
+			transform: scale(1.8);
+		}
+	}
+
+	.picture{
+		margin:auto;
+		padding-top: 5px;
+		width: 90%;
 		height:90%;
-		overflow: hidden;
-		
-        img{
+		// overflow: hidden;
+
+		img{
 			width:100%;
 			border-radius: 30%;
 			cursor: pointer;
 			object-fit: cover;
-        }
-    }
-    
+			transition: transform .2s;
+			&:hover {
+				transform: scale(1.8);
+			}
+		}
+	}
 }
 
 .fc-calendar .fc-row > div, .fc-calendar .fc-head > div {

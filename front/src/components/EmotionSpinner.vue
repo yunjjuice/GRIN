@@ -1,7 +1,7 @@
 <template>
 <div class="overlay">
 
-<div v-if="this.showEmotion" >
+<div class = "emotext" v-if="this.showEmotion" >
   <div class="emotion-string">
 <span class = "font__se-han" >당신의 감정은 <strong>{{emotion}}</strong>입니다</span>
 </div>
@@ -206,8 +206,8 @@ export default {
     /* background-color: blue;
     color: yellow; */
     font-size: 18px;
-    left: 59.9%;
-    top: 13%;
+    left: 61%;
+    top: 11.5%;
     position:absolute;
     -webkit-transition-property: width height background-color font-size left top color;
     -webkit-transition-duration:2s;
@@ -222,8 +222,8 @@ export default {
     /* background-color: blue;
     color: yellow; */
     font-size: 18px;
-    left: 62.2%;
-    top: 13%;
+    left: 63.7%;
+    top: 11.5%;
     position:absolute;
     -webkit-transition-property: width height background-color font-size left top color;
     -webkit-transition-duration:2s;
@@ -238,8 +238,8 @@ export default {
     /* background-color: blue;
     color: yellow; */
     font-size: 18px;
-    left: 64.5%;
-    top: 13%;
+    left: 66.3%;
+    top: 11.5%;
     position:absolute;
     -webkit-transition-property: width height background-color font-size left top color;
     -webkit-transition-duration:2s;
@@ -254,8 +254,8 @@ export default {
     /* background-color: blue;
     color: yellow; */
     font-size: 18px;
-    left: 67%;
-    top: 13%;
+    left: 68.8%;
+    top: 11.5%;
     position:absolute;
     -webkit-transition-property: width height background-color font-size left top color;
     -webkit-transition-duration:2s;
@@ -264,8 +264,16 @@ export default {
     transition-duration:2s;
     transition-timing-function: ease;
 }
+.emotext{
+  top:18%;
+  left: 40%;
+  position: absolute;
+}
 span{
-  padding-left: 100px;
+  top : 20%;
+  left: 40%;
+  z-index: 32;
+  padding: 0px 30px;
   text-align: center;
   font-size: 40px;
   size : 20px;

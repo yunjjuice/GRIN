@@ -116,7 +116,7 @@ export default {
           this.diaryData.forEach((item) => {
             item.createdate = moment(new Date(item.createdate)).format('yyyy-M-D');
           });
-          console.log('get diary', data);
+          // console.log('get diary', data);
           await store.dispatch('diaryStore/ACT_DIARIES', data);
         })
         .catch((err) => console.log(err));

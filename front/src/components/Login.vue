@@ -55,12 +55,12 @@ export default {
   },
   methods: {
     login() {
-      console.log('로그인');
+      // console.log('로그인');
       api.post('account/login/', {
         username: this.username,
         password: this.pwd,
       }).then(({ data }) => {
-        console.log(data);
+        // console.log(data);
         this.$session.set('user_id', data.user.id);
         this.$session.set('user_token', data.token);
         window.location.reload();

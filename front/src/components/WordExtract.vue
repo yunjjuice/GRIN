@@ -30,7 +30,7 @@ export default {
       store.dispatch('windowStore/ACT_SPIN', true);
       await api.get(`drawing/keyword/?keyword=${word}`)
         .then((res) => {
-          console.log(res);
+          // console.log(res);
           imagePath = res.data.image_path;
         }).catch((err) => {
           console.log(err);

@@ -7,7 +7,7 @@
 	margin-bottom: 20px;
 }
 .sketchy {
-	padding: 1rem 2rem;
+	padding: 1rem;
 	display: inline-block;
 	border: 3px solid #333;
   font-family: 'KyoboHand';
@@ -17,7 +17,8 @@
 	letter-spacing: 0.3ch;
 	background: #fff;
 	position: relative;
-	width: 80%;
+  width: 90%;
+  text-align: center;
 	&::before {
 		// content: '';
 		border: 2px solid #353535;
@@ -123,4 +124,14 @@ input[type="file"] {
   width: 100%;
   height: 100%;
   border: 0;
+}
+.emotion {
+  transition: transform .2s;
+  width:25px;
+  object-fit: cover;
+  position: inherit;
+  &:hover {
+    opacity: 1;
+    transform: scale(1.8);
+  }
 }

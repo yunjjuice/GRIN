@@ -99,12 +99,20 @@
     <div class="writing__font-selector" data-html2canvas-ignore="true">
       <span>공유</span>
       <div class="btn-group">
-        <button @click="saveFile" class="btn">
+        <!-- <button @click="saveFile" class="btn">
           <fa icon="file-download"></fa>
         </button>
         <button class="btn">
           <fa icon="share"></fa>
-        </button>
+        </button> -->
+        <div id="btn-download" @click="saveFile">
+          <svg width="22px" height="16px" viewBox="0 0 22 16">
+            <path d="M2,10 L6,13 L12.8760559,4.5959317 C14.1180021,3.0779974 16.2457925,2.62289624 18,3.5 L18,3.5 C19.8385982,4.4192991 21,6.29848669 21,8.35410197 L21,10 C21,12.7614237 18.7614237,15 16,15 L1,15" id="check"></path>
+            <polyline points="4.5 8.5 8 11 11.5 8.5" class="svg-out"></polyline>
+            <path d="M8,1 L8,11" class="svg-out"></path>
+          </svg>
+          <span>파일로 저장하기</span>
+        </div>
       </div>
     </div>
     <div class="writing__grid">
@@ -141,6 +149,7 @@ export default {
       date: "",
       day: "",
       diary: [],
+      downloadBtn: '',
     };
   },
   computed: {
@@ -175,6 +184,8 @@ export default {
 
     const fontSelector = document.querySelector(".font-selector__font-list");
     this.fontBtnList = fontSelector.querySelectorAll("button");
+
+    this.downloadBtn = document.querySelector('#btn-download');
   },
   methods: {
     selectWeather(e) {
@@ -188,6 +199,7 @@ export default {
       return `grid__content ${this.fontMapList[this.font]}`;
     },
     async saveFile() {
+      this.downloadBtn.classList.add('downloaded');
       // const el = this.$refs.capture;
       const el = document.querySelector('#capture');
       // vue-html2canvas 사용
@@ -200,8 +212,13 @@ export default {
           await computedStyleToInlineStyle(document.querySelector("#capture"), {
             recursive: true,
           });
+          await setTimeout(async () => { }, 10000);
         },
       });
+
+      setTimeout(() => {
+        this.downloadBtn.classList.remove('downloaded');
+      }, 3000);
 
       // html2canvas 사용
       // const output = await html2canvas(el, {
@@ -242,6 +259,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "../style/diarydetail.scss";
+@import "../style/downloadbutton.scss";
 
 .writing__drawing{
   img{
@@ -262,6 +280,11 @@ export default {
   // color: rgba(0, 0, 0, 0.4);
   font-weight: bold;
   cursor: pointer;
+}
+
+#btn-download {
+  top: calc(50% + 56px) !important;
+  left: calc(50% - 157px) !important;
 }
 
 </style>

@@ -67,7 +67,7 @@ export default {
   },
   watch: {
     grimMode() {
-      console.log(this.grimMode);
+      // console.log(this.grimMode);
       this.canvas = this.$refs.canvas;
       this.ctx = this.canvas.getContext("2d");
       if (this.grimMode) {
@@ -405,8 +405,8 @@ export default {
     drawing(e) {
       if (this.isDrawing) {
         this.drawLine(this.x, this.y, e.offsetX, e.offsetY);
-        console.log("xx ", e.offsetX);
-        console.log("this.drawingImage.s ", this.drawingImage.sx);
+        // console.log("xx ", e.offsetX);
+        // console.log("this.drawingImage.s ", this.drawingImage.sx);
         this.drawingImage.sx = Math.min(e.offsetX, this.drawingImage.sx);
         this.drawingImage.sy = Math.min(e.offsetY, this.drawingImage.sy);
         this.drawingImage.dx = Math.max(e.offsetX, this.drawingImage.dx);
@@ -437,8 +437,8 @@ export default {
           oCanvas.height = this.drawingImage.dy - this.drawingImage.sy;
           const oCtx = oCanvas.getContext('2d');
           oCtx.drawImage(img, this.drawingImage.sx, this.drawingImage.sy, oCanvas.width, oCanvas.height, 0, 0, oCanvas.width, oCanvas.height);
-          console.log(oCanvas.toDataURL());
-          console.log(this.loadCount);
+          // console.log(oCanvas.toDataURL());
+          // console.log(this.loadCount);
           this.imgs[this.loadCount] = new Image();
           this.imgs[this.loadCount].src = oCanvas.toDataURL();
           this.imgs[this.loadCount].crossOrigin = "Anonymous";

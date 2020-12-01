@@ -69,12 +69,13 @@
 ![04달력](./docs/img/04달력.gif)
 - 달력에서 모아보기
 - 내가 언제 일기를 썼을까?
-## ✅ 저장하기
-- 귀엽고 남이 그려준 그림일기를 파일로 저장할 수 있어요
 ## ✅ 그리기
 ![05그리기](./docs/img/05그리기.gif)
 - 인공지능이 데려온 그림만으로 모자른 느낌이 들 때,
 - 그리기 모드를 ON하여 직접 그림을 그려보아요
+## ✅ 저장하기
+- 귀엽고 인공지능이 그려준 그림일기를 파일로 저장할 수 있어요
+![06저장하기](./docs/img/06저장하기.png)
 
 <br><br>
 
@@ -104,9 +105,13 @@
 
 <br>
 
-## 🌈 사용 기술
-### Django REST Framework
-### Vue.js
+## 🌈 기술 스택
+![Django](https://img.shields.io/badge/Django-3.1.1-brightgreen?logo=django) ![Django REST Framework](https://img.shields.io/badge/djangorestframework-3.11.1-green?logo=django) ![KoNLPy](https://img.shields.io/badge/KoNLPy-0.5.2-yellow) ![tensorflow](https://img.shields.io/badge/tensorflow-2.3.0-orange?logo=TensorFlow) ![gtk2](https://img.shields.io/badge/gtk2-2.19.9-yellowgreen) ![MySQL](https://img.shields.io/badge/DBMS-MySQL-blue?logo=MySQL&logoColor=white) ![Vue](https://img.shields.io/badge/vue-%5E2.6.11-red?logo=vue.js) ![Vue Router](https://img.shields.io/badge/vue--router-%5E3.2.0-lightgrey?logo=vue.js) ![Vuex](https://img.shields.io/badge/vuex-%5E3.4.0-blue?logo=vue.js) ![vue-html2canvas](https://img.shields.io/badge/vue--html2canvas-0.0.4-brightgreen?logo=vue.js) ![vue-toastification](https://img.shields.io/badge/vue--toastification-%5E1.7.8-green?logo=vue.js) ![AWS](https://img.shields.io/badge/Infra-AWS-232F3E?logo=Amazon-AWS) ![Docker](https://img.shields.io/badge/Infra-Docker-2496ED?logo=Docker) ![NGINX](https://img.shields.io/badge/Infra-NGINX-269539?logo=NGINX) ![Jenkins](https://img.shields.io/badge/CI/CD-Jenkins-D24939?logo=Jenkins) ![JIRA](https://img.shields.io/badge/Communication-Jira-0052CC?logo=Jira) ![MatterMost](https://img.shields.io/badge/Communication-Mattermost-0072C6?logo=Mattermost) ![Notion](https://img.shields.io/badge/Communication-Notion-000000?logo=Notion)
+
+<br>
+
+## 📚 ERD
+![ERD](./docs/img/ERD.png)
 
 <br>
 <br>
@@ -150,6 +155,33 @@ pip install -r requirements.txt
 ### 6) deactivate 명령으로 현재 가상환경 비활성화
 ```
 deactivate
+```
+
+<br>
+
+## Django
+`/backend/mydiary/mydiary` 폴더 내에 `secret.json` 파일과 `mysettings.py` 파일 추가
+```
+secret.json
+
+{
+    "SECRET_KEY": "시크릿키"
+}
+```
+```
+mysettings.py
+
+#DATABASES 설정
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'db이름',
+        'USER' : '사용자이름',
+        'PASSWORD' : 'db비밀번호',
+        'HOST' : '호스트명',
+        'PORT' : '3306'
+    }
+}
 ```
 
 <br>

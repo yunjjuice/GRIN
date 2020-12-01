@@ -1,5 +1,8 @@
 <template>
   <div @click="closeBook" ref="home" class="home">
+    <div class="audio">
+      <audio autoplay controls loop> <source src="강아지같아.mp3" type="audio/mp3"> </audio>
+    </div>
     <div class="container">
       <div class="component">
         <figure @click="openBook" ref="book" class="book first-page">
@@ -9,7 +12,10 @@
             <li>
               <div class="back-space"></div>
               <span class="ribbon ribbon--color1"></span>
-              <img :src="`/imgs/bookcovers/${theme}.gif`" width="100%" height="100%" />
+              <div class="front-wrap">
+                <img :src="`/imgs/bookcovers/${theme}.gif`" width="100%" height="100%" />
+                <div class="front-title"><img src="front-title.png" /></div>
+              </div>
             </li>
             <li></li>
           </ul>
@@ -28,7 +34,6 @@
                 backgroundColor="#7aa3e6"
                 top="170px"
               />
-              <!-- <decoration /> -->
               <decoration-background />
             </li>
             <li>
@@ -37,29 +42,29 @@
               </div>
               <bookmark
                 pageNumber="2"
-                text="일기 쓰기"
+                text="달력"
                 color="white"
                 backgroundColor="#77c9c2"
                 top="120px"
               />
-              <writing />
+              <calendar />
             </li>
             <li>
               <div class="back-space">
-                <word-extract />
+                <diary-detail />
               </div>
               <bookmark
                 pageNumber="1"
-                text="달력 보기"
+                text="일기 쓰기"
                 color="white"
                 backgroundColor="pink"
                 top="70px"
               />
-              <calendar />
+               <writing />
             </li>
             <li v-if="this.$session.has('user_id')">
               <div class="back-space">
-                <diary-detail />
+                <word-extract />
               </div>
               <bookmark
                 pageNumber="0"
@@ -72,7 +77,9 @@
               <profile-edit v-else />
             </li>
             <li v-else>
-              <div class="back-space"></div>
+              <div class="back-space">
+                <word-extract />
+              </div>
               <bookmark
                 pageNumber="0"
                 text="로그인"
@@ -186,4 +193,10 @@ export default {
   min-width: 100vw;
   min-height: 100vh;
 }
+
+ .audio{
+      position: absolute;
+      top: 5%;
+      left: 80%;
+    }
 </style>

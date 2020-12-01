@@ -25,10 +25,13 @@
               <div class="fc-body">
                 <div class="calendar__grid">
                   <div :key="index" v-for="index in 42">
-                    <div class="date" v-if="index >startDay && index-startDay<=endDate">
+                    <div class="date" v-if="index >startDay && index-startDay<=endDate" style="float:left;">
                       {{ index - startDay}}
                     </div>
-                    <div class="picture" @click="getDiaryDetail(diaryData.filter((it) => it.createdate.includes(year+'-'+(month+1)+'-'+(index-startDay)))[0].id)" v-if="diaryData.filter((it) => it.createdate == year+'-'+(month+1)+'-'+(index-startDay)) != false">
+                    <div style="float:right;" v-if="diaryData.filter((it) => it.createdate == year+'-'+(month+1)+'-'+(index-startDay)) != false">
+                      <img class="emotion" :src="emotionList[diaryData.filter((it) => it.createdate.includes(year+'-'+(month+1)+'-'+(index-startDay)))[0].emotion]" />
+                    </div>
+                    <div class="picture" style="clear:both;" @click="getDiaryDetail(diaryData.filter((it) => it.createdate.includes(year+'-'+(month+1)+'-'+(index-startDay)))[0].id)" v-if="diaryData.filter((it) => it.createdate == year+'-'+(month+1)+'-'+(index-startDay)) != false">
                       <img :src="diaryData.filter((it) => it.createdate.includes(year+'-'+(month+1)+'-'+(index-startDay)))[0].image" />
                     </div>
                   </div>
@@ -59,6 +62,12 @@ export default {
       startDay: 0,
       tempDate: 1,
       diaryData: [],
+      emotionList: [
+        'imgs/emotion/happy.png',
+        'imgs/emotion/sad.png',
+        'imgs/emotion/angry.png',
+        'imgs/emotion/soso.png',
+      ],
     };
   },
   created() {
@@ -71,11 +80,11 @@ export default {
       this.getdiaries();
     }
   },
-  updated() {
-    if (this.$session.has('user_id')) {
-      this.getdiaries();
-    }
-  },
+  // updated() {
+  //   if (this.$session.has('user_id')) {
+  //     this.getdiaries();
+  //   }
+  // },
   methods: {
     ...mapGetters({
       getDiary: "diaryStore/GET_DIARY",
@@ -102,16 +111,21 @@ export default {
     },
     async getdiaries() {
       await api.get(`diary/?user=${this.$session.get('user_id')}`)
-        .then(({ data }) => {
+        .then(async ({ data }) => {
           this.diaryData = data;
           this.diaryData.forEach((item) => {
             item.createdate = moment(new Date(item.createdate)).format('yyyy-M-D');
           });
+          // console.log('get diary', data);
+          await store.dispatch('diaryStore/ACT_DIARIES', data);
         })
         .catch((err) => console.log(err));
     },
     getDiaryDetail(id) {
       store.dispatch('diaryStore/fetchDiary', id);
+    },
+    getEmotion(index) {
+      return this.emotionList[index];
     },
   },
 };

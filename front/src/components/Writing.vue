@@ -4,6 +4,7 @@
       <div class="day-info__date">{{year}}년 {{month}}월 {{date}}일 ({{day}})</div>
       <div class="day-info__weather">
         <span>날씨</span>
+        <div ></div>
         <svg
           class="weather__icon-sunny"
           xmlns="http://www.w3.org/2000/svg"
@@ -26,6 +27,7 @@
             6s-6-2.686-6-6 2.686-6 6-6 6 2.686 6 6z"
           />
         </svg>
+        <div></div>
         <svg
           class="weather__icon-rainy"
           xmlns="http://www.w3.org/2000/svg"
@@ -44,16 +46,31 @@
             .551.449 1 1 1s1-.449 1-1v-8.866c.68-.226 1.27-.242 2 .023z"
           />
         </svg>
-        <!-- <svg
-          class="weather__icon-snowy"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-        >
-          <path d="M14 19.25c0 .689-.559 1.25-1.25 1.25s-1.25-.561-1.25-1.25.559-1.25 1.25-1.25 1.25.561 1.25 1.25zm-3.75 1.25c-.691 0-1.25.561-1.25 1.25s.559 1.25 1.25 1.25 1.25-.561 1.25-1.25-.559-1.25-1.25-1.25zm8.75-1.25c0 .689-.559 1.25-1.25 1.25s-1.25-.561-1.25-1.25.559-1.25 1.25-1.25 1.25.561 1.25 1.25zm-3.75 1.25c-.691 0-1.25.561-1.25 1.25s.559 1.25 1.25 1.25 1.25-.561 1.25-1.25-.559-1.25-1.25-1.25zm-6.25-1.25c0 .689-.559 1.25-1.25 1.25s-1.25-.561-1.25-1.25.559-1.25 1.25-1.25 1.25.561 1.25 1.25zm-3.75 1.25c-.691 0-1.25.561-1.25 1.25s.559 1.25 1.25 1.25 1.25-.561 1.25-1.25-.559-1.25-1.25-1.25zm15.172-11.984c-.178-3.232-3.031-5.777-6.432-5.491-1.087-1.24-2.693-2.025-4.49-2.025-3.172 0-5.754 2.443-5.922 5.516-2.033.359-3.578 2.105-3.578 4.206 0 2.362 1.949 4.278 4.354 4.278h1.326c.771 1.198 2.124 2 3.674 2h10.291c2.406 0 4.355-1.916 4.355-4.278 0-2.101-1.545-3.847-3.578-4.206zm-15.395 4.484h-.673c-1.297 0-2.354-1.021-2.354-2.278 0-2.118 2.104-2.597 3.488-2.513-.05-1.355.137-5.209 4.012-5.209.967 0 1.714.25 2.29.645-1.823.921-3.096 2.745-3.212 4.871-2.022.357-3.697 2.127-3.551 4.484zm14.618 2h-10.291c-1.297 0-2.354-1.021-2.354-2.278 0-2.118 2.104-2.597 3.488-2.513-.05-1.355.137-5.209 4.012-5.209 3.771 0 4.229 3.771 4.012 5.209 1.509-.105 3.488.437 3.488 2.513 0 1.257-1.057 2.278-2.355 2.278z" />
-        </svg> -->
-        <svg id="Capa_1" class="weather__icon-snowy" enable-background="new 0 0 512.002 512.002" height="512" viewBox="0 0 512.002 512.002" width="512" xmlns="http://www.w3.org/2000/svg"><g><path d="m121.001 331h16.973l-44.453 66.68c-2.387 3.58-3.121 8.012-2.017 12.17 1.104 4.159 3.94 7.643 7.789 9.566l51.708 25.854v51.73c0 6.624 4.345 12.464 10.689 14.367 6.411 1.923 13.226-.638 16.833-6.11l60-91c2.361-3.581 3.076-8.001 1.965-12.144s-3.942-7.611-7.779-9.529l-51.708-25.854v-35.73h136.973l-44.453 66.68c-2.387 3.58-3.121 8.012-2.017 12.17 1.104 4.159 3.94 7.643 7.789 9.566l51.708 25.854v51.73c0 6.624 4.345 12.464 10.689 14.367 6.411 1.923 13.226-.638 16.833-6.11l60-91c2.361-3.581 3.076-8.001 1.965-12.144s-3.942-7.611-7.779-9.529l-51.708-25.854v-35.73h60c49.922 0 91-40.431 91-90 0-49.52-41.033-90-91-90-.501 0-1.003.004-1.504.013-6.248-30.683-31.289-54.618-62.534-59.214-13.244-53.118-61.092-91.799-115.962-91.799-54.894 0-102.314 38.259-115.749 91.118-1.397-.076-2.812-.118-4.251-.118-66.72 0-121 53.832-121 120s54.28 120 121 120zm83.172 80.856-23.172 35.144v-11c0-5.682-3.21-10.876-8.292-13.416l-44.802-22.401 23.094-34.641v10.458c0 5.682 3.21 10.876 8.292 13.416zm180 0-23.172 35.144v-11c0-5.682-3.21-10.876-8.292-13.416l-44.802-22.401 23.094-34.641v10.458c0 5.682 3.21 10.876 8.292 13.416zm-263.172-290.856c4.362 0 8.74.635 14.011 1.466 8.396 1.318 16.143-4.57 17.213-12.908 5.82-45.356 43.985-79.558 88.776-79.558 44.168 0 82.281 33.649 88.654 78.271 1.101 7.713 8.089 13.845 17.082 12.734 24.229.39 43.863 20.024 44.258 44.251-1.385 11.15 8.215 18.96 17.867 16.973 3.975-.815 8.059-1.229 12.139-1.229 33.636 0 61 26.916 61 60s-27.364 60-61 60h-300c-50.178 0-91-40.374-91-90s40.822-90 91-90z"/></g></svg>
+        <div></div>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24" height="24"
+          viewBox="0 0 511.878 511.878" style="enable-background:new 0 0 511.878 511.878;" xml:space="preserve" class="weather__icon-thunder">
+          <g>
+            <g>
+              <path d="M499.15,232.533C486.35,170.667,435.15,128,373.283,128c-6.4,0-14.933,0-21.333,2.133V128c0-70.4-57.6-128-128-128
+                c-70.4,0-128,57.6-128,128c0,2.133,0,4.267,0,6.4c-66.133,23.467-102.4,98.133-78.933,164.267
+                C27.683,326.4,46.883,352,72.483,366.933l21.333-36.267c-40.533-23.467-53.333-76.8-29.867-117.333
+                C76.75,192,98.083,177.067,123.683,172.8c12.8-2.133,19.2-14.933,17.067-25.6c-10.667-44.8,17.067-91.733,64-102.4
+                c46.933-10.667,91.733,17.067,102.4,64c4.267,14.933,2.133,32-2.133,46.933c-6.4,17.067,12.8,34.133,29.867,25.6
+                c10.667-6.4,25.6-10.667,38.4-10.667c46.933,0,85.333,38.4,85.333,85.333c0,40.533-29.867,76.8-68.267,83.2l8.533,42.667
+                C469.283,369.067,514.083,300.8,499.15,232.533z"/>
+            </g>
+          </g>
+          <g>
+            <g>
+              <path d="M330.617,320h-32l32-76.8c4.267-12.8-4.267-29.867-19.2-29.867H181.283c-8.533,0-17.067,4.267-19.2,12.8L119.417,332.8
+                c-6.4,14.933,4.267,29.867,19.2,29.867h32l-51.2,119.467c-8.533,19.2,14.933,38.4,32,25.6l192-149.333
+                C358.35,345.6,349.817,320,330.617,320z M249.55,354.133c4.267,6.4,10.667,8.533,17.067,8.533h2.133l-76.8,59.733l32-72.533
+                c4.267-10.667,0-23.467-10.667-27.733C209.017,320,204.75,320,202.617,320h-32l25.6-64h81.067l-32,76.8
+                C243.15,339.2,245.283,347.733,249.55,354.133z"/>
+            </g>
+          </g>
+        </svg>
+        <div></div>
         <svg
           class="weather__icon-cloudy"
           xmlns="http://www.w3.org/2000/svg"
@@ -81,7 +98,7 @@
       </div>
     </div>
     <div class="writing__drawing">
-      <drawing-canvas ref="canvas" v-if="refresh" />
+      <drawing-canvas ref="canvas" v-if="refresh" v-bind:grimMode="isGrimMode" />
     </div>
     <div class="writing__font-selector">
       <span>글꼴</span>
@@ -91,12 +108,81 @@
         <button @click="selectFont" class="font__min-gyeong">민경</button>
       </div>
       <div class="btn-group">
-        <button :disabled="content.length < 10" @click="showModal" class="btn">
-          <fa icon="paper-plane"></fa>
-        </button>
-        <button @click="saveDiary" class="btn">
-          <fa icon="file-download"></fa>
-        </button>
+        <div id="btn-send" @click="showModal">
+          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 434.958 434.958" style="enable-background:new 0 0 434.958 434.958;" xml:space="preserve" width="22" height="22">
+            <g>
+              <g>
+                <polygon points="129.777,0.278 104.598,227.593 118.168,229.096 141.844,15.351 419.884,46.147 389.871,317.16 295.825,391.13
+                  147.828,374.736 146.324,388.308 299.875,405.316 402.811,324.352 434.958,34.08" />
+              </g>
+            </g>
+            <g>
+              <g>
+                <path d="M343.66,116.673c-9.866-10.197-34.156-7.016-72.967-0.98c-19.511,3.034-60.109,9.347-63.191,2.572
+                  c-1.63-3.586-1.456-6.729,0.544-9.89c7.325-11.575,38.996-24.318,105.919-25.371c3.77-0.058,6.777-3.162,6.719-6.932
+                  c-0.058-3.77-3.169-6.76-6.932-6.719c-63.29,0.997-104.928,12.262-117.243,31.722c-4.499,7.11-4.995,15.007-1.435,22.842
+                  c7.016,15.425,34.104,12.051,77.718,5.268c22.144-3.444,55.608-8.648,61.056-3.017c0.473,0.49,1.254,1.381,1.171,1.857
+                  c-0.21,1.183-2.693,7.767-30.99,21.417c-54.429,26.259-59.45,32.519-57.933,40.544c1.57,8.301,11.273,9.037,25.958,10.151
+                  c15.674,1.19,39.363,2.988,40.974,14.78c0.468,3.422,3.395,5.903,6.755,5.903c0.309,0,0.62-0.022,0.934-0.065
+                  c3.736-0.51,6.351-3.953,5.84-7.689c-3.104-22.721-33.413-25.021-53.468-26.544c-2.656-0.201-5.769-0.437-8.527-0.729
+                  c6.243-4.139,19.14-11.387,45.399-24.055c25.247-12.177,36.76-21.543,38.501-31.321
+                  C349.338,125.495,347.721,120.87,343.66,116.673z"/>
+              </g>
+            </g>
+            <g>
+              <g>
+                <polygon points="300.22,295.159 289.937,396.421 303.52,397.8 312.416,310.207 394.674,319.075 396.136,305.5" />
+              </g>
+            </g>
+            <g>
+              <g>
+                <path d="M239.659,194.623c-1.442-1.439-3.451-2.156-5.48-1.958l-102.41,9.999c-1.574,0.154-3.046,0.85-4.164,1.968L2,330.237
+                  c-1.282,1.28-2,3.017-2,4.826c0,1.809,0.72,3.546,2,4.826l92.79,92.79c1.28,1.282,3.016,2,4.826,2c1.811,0,3.548-0.72,4.828-1.998
+                  l125.604-125.604c1.125-1.125,1.821-2.608,1.969-4.192l9.62-102.789C241.828,198.067,241.102,196.06,239.659,194.623z
+                  M218.653,299.162L99.616,418.198l-83.135-83.135l119.047-119.049l91.745-8.958L218.653,299.162z"/>
+              </g>
+            </g>
+            <g>
+              <g>
+                <rect x="170.301" y="192.201" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -130.235 200.6826)" width="13.653" height="130.695"/>
+              </g>
+            </g>
+            <g>
+              <g>
+                <rect x="198.824" y="197.163" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -101.7181 212.4996)" width="13.653" height="63.743"/>
+              </g>
+            </g>
+            <g>
+              <g>
+                <rect x="8.936" y="292.55" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -183.001 156.9498)" width="178.038" height="13.653"/>
+              </g>
+            </g>
+            <g>
+              <g>
+                <rect x="46.274" y="329.899" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -198.4723 194.2968)" width="178.055" height="13.653"/>
+              </g>
+            </g>
+          </svg>
+          <span>{{ msg }}</span>
+        </div>
+        <!-- 다운로드 버튼 -->
+        <div id="btn-download" @click="saveDiary">
+          <svg width="22px" height="16px" viewBox="0 0 22 16">
+            <path d="M2,10 L6,13 L12.8760559,4.5959317 C14.1180021,3.0779974 16.2457925,2.62289624 18,3.5 L18,3.5 C19.8385982,4.4192991 21,6.29848669 21,8.35410197 L21,10 C21,12.7614237 18.7614237,15 16,15 L1,15" id="check"></path>
+            <polyline points="4.5 8.5 8 11 11.5 8.5" class="svg-out"></polyline>
+            <path d="M8,1 L8,11" class="svg-out"></path>
+          </svg>
+          <span>일기 저장하기</span>
+        </div>
+        <div class='toggle btn-drawing' id='switch' @click="drawingToggle">
+          <div class='toggle-text-off'>OFF</div>
+          <div class='glow-comp'></div>
+          <div class='toggle-button'></div>
+          <div class='toggle-text-on'>ON</div>
+          <span>그리기 모드</span>
+        </div>
+        <!-- <button class="btn-drawing" @click="isGrimMode = !isGrimMode" > 그리기 모드 </button> -->
       </div>
     </div>
     <div class="writing__grid">
@@ -120,6 +206,7 @@ export default {
   },
   data() {
     return {
+      imgscr: '/imgs/emotion/sad.png',
       gridRow: 5,
       gridColumn: 10,
       weatherIconList: [],
@@ -138,6 +225,12 @@ export default {
       day: "",
       content: "",
       refresh: true,
+      isGrimMode: false,
+      action: [],
+      sendBtn: '',
+      downloadBtn: '',
+      drawingToggleBtn: '',
+      msg: '10글자 이상 작성해주세요',
     };
   },
   computed: {
@@ -146,11 +239,36 @@ export default {
   watch: {
     emotion(newVal) {
       if (newVal >= 0 && newVal < 4) {
+        console.log("durl ", this.action);
         this.changeWeather(this.weatherIconList[newVal]);
       } else {
         this.weatherIconList.forEach((elem) => {
           elem.classList.remove("selected");
         });
+      }
+      console.log("newVal ", newVal);
+      if (newVal === '0') {
+        setTimeout(() => { this.action[newVal].classList.add('pulse-loader-sunny'); }, 8000);
+        setTimeout(() => { this.action[newVal].classList.remove('pulse-loader-sunny'); }, 11000);
+      } else if (newVal === '1') {
+        setTimeout(() => { this.action[newVal].classList.add('pulse-loader-cloudy'); }, 8000);
+        setTimeout(() => { this.action[newVal].classList.remove('pulse-loader-cloudy'); }, 11000);
+      } else if (newVal === '2') {
+        setTimeout(() => { this.action[newVal].classList.add('pulse-loader-rainy'); }, 8000);
+        setTimeout(() => { this.action[newVal].classList.remove('pulse-loader-rainy'); }, 11000);
+      } else if (newVal === '3') {
+        setTimeout(() => { this.action[newVal].classList.add('pulse-loader-snowy'); }, 8000);
+        setTimeout(() => { this.action[newVal].classList.remove('pulse-loader-snowy'); }, 11000);
+      }
+      console.log("d액션", this.action);
+    },
+    content(newVal) {
+      if (newVal.length < 10) {
+        this.msg = '10글자 이상 작성해주세요';
+        this.sendFlag = false;
+      } else {
+        this.msg = '그림 그리기';
+        this.sendFlag = true;
       }
     },
   },
@@ -164,9 +282,13 @@ export default {
   mounted() {
     const weatherInfo = document.querySelector(".day-info__weather");
     this.weatherIconList = weatherInfo.querySelectorAll("svg");
-
+    this.action = weatherInfo.querySelectorAll("div");
     const fontSelector = document.querySelector(".font-selector__font-list");
     this.fontBtnList = fontSelector.querySelectorAll("button");
+
+    this.downloadBtn = document.querySelector('#btn-download');
+    this.sendBtn = document.querySelector('#btn-send');
+    this.drawingToggleBtn = document.querySelector('.toggle');
   },
   methods: {
     init() {
@@ -199,6 +321,8 @@ export default {
       this.$refs.content.classList.add(this.fontMapList[fontName]);
     },
     showModal() {
+      if (this.content.length < 10) return;
+
       store.dispatch('windowStore/ACT_SM', true);
       store.dispatch('diaryStore/ACT_CONTENT', this.content);
     },
@@ -213,6 +337,7 @@ export default {
         return;
       }
 
+      this.downloadBtn.classList.add('downloaded');
       const el = this.$refs.canvas.$el;
       this.refresh = false;
       await el.toBlob((blob) => {
@@ -234,6 +359,17 @@ export default {
         });
         this.refresh = true;
       });
+      setTimeout(() => {
+        this.downloadBtn.classList.remove('downloaded');
+      }, 3000);
+    },
+    drawingToggle() {
+      this.isGrimMode = !this.isGrimMode;
+      if (this.isGrimMode) {
+        this.drawingToggleBtn.classList.add('toggle-on');
+      } else {
+        this.drawingToggleBtn.classList.remove('toggle-on');
+      }
     },
   },
 };
@@ -241,41 +377,10 @@ export default {
 
 <style lang="scss" scoped>
 @import "../style/writing.scss";
+@import "../style/downloadbutton.scss";
 
 .btn-group {
   position: absolute;
   right: 30px;
-}
-
-.btn {
-  border: none;
-  background-color:rgba(0,0,0,0);
-  font-size: 1.5rem;
-  outline: none;
-  margin: 5px;
-  // color: rgba(0, 0, 0, 0.4);
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.sunny {
-  position: absolute;
-  width: 60px;
-  right: 136px;
-}
-.cloudy {
-  position: absolute;
-  width: 60px;
-  right: 92px;
-}
-.rainy {
-  position: absolute;
-  width: 60px;
-  right: 52px;
-}
-.snowy {
-  position: absolute;
-  width: 60px;
-  right: 10px;
 }
 </style>

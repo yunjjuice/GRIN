@@ -6,10 +6,10 @@ import sys
 
 
 #트위터의 개인 앱 계정에서 아래 4가지 사항 확인
-consumer_key = "coPxdqeKvCZMv8ZQnj1Y4MhrI"
-consumer_secret = "qkR04FhcQHiXszD68yNksTwnx7tAkQKYv0dz5vrgJduCrayprw"
-access_token = "1309012765911248898-GWU6gRDlA3Xs6ULS7rrYCU94HhOJiY"
-access_token_secret = "fHX1SMdjAdgQ0bNohQotjhAWP9nh2PaZlDLC6wNSR9cK8"
+consumer_key = ""
+consumer_secret = ""
+access_token = ""
+access_token_secret = ""
 
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 
